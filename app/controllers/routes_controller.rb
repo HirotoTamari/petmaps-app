@@ -1,6 +1,7 @@
 class RoutesController < ApplicationController
     def index
         @routes= Route.all.order(created_at: :desc)
+        
         @route = Route.new
     end
 
