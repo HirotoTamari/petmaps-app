@@ -605,7 +605,7 @@ li{
     .about_menu_contens{
         margin: 15vw;
         width: 70vw;
-        font-size: 10px;
+        font-size: 13px;
         color: #147339;
     }
 
@@ -617,7 +617,7 @@ li{
 
     .about_title{
         margin: 0 100px;
-        padding-top: 14px;
+        padding-top: 15px;
         opacity: 1.0;
         font-size: 15px;
         color: #147339;
@@ -684,6 +684,37 @@ li{
 
     .nav_item_title a{
         font-size: 14px;
+        color: white;
+    }
+
+    .recommend_login_title{
+        color: #009944;
+        opacity: 1.0;
+        font-size: 15px;
+        padding-left: 10vw;
+    }
+
+    .recommend_login_form{
+        padding: 20px 10vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recommend_login_form li{
+        margin: 20px 0;
+        border: none;
+        border-radius: 21px;
+        color: white;
+        background-color: #147339;
+        box-shadow: 0 2px 6px #0E4C24;
+        width: 80vw;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .recommend_login_form a{
         color: white;
     }
 }
