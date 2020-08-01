@@ -40,34 +40,90 @@
         <%# できることの説明 %>
         <div class="about_contents">
             <h2 class="about_contents_title">ペットマップでできること</h2>
-            <div class="about_contents_nav">
-                <div class="about_contents_nav_long_item">
+            <div class="about_contents_web_nav">
+                <section class="about_contents_nav_long_item">
                     <%= link_to image_tag("/sample_menu.png"), "/maps" %>
                     <div class="nav_item_title">
                         <div class="item_padding">
                             <%= link_to( "ペットマップあああああああああああ", "/maps") %>
                         </div>
                     </div>
-                </div>
+                </section>
                 <div class="about_contents_nav_short_items">
-                    <div class="about_contents_nav_short_item">
+                    <section class="about_contents_nav_short_item">
                         <%= link_to image_tag("/sample_menu.png"), "/maps" %>
                         <div class="nav_item_title">
                             <div class="item_padding">
                                 <%= link_to( "ペットマップあああああああああああ", "/maps") %>
                             </div>
                         </div>
-                    </div>
-                    <div class="about_contents_nav_short_item">
-                    </div>
-                    <div class="about_contents_nav_short_item">
-                    </div>
-                    <div class="about_contents_nav_short_item">
-                    </div>
+                    </section>
+                    <section class="about_contents_nav_short_item">
+                    </section>
+                    <section class="about_contents_nav_short_item">
+                    </section>
+                    <section class="about_contents_nav_short_item">
+                    </section>
+                </div>
+            </div>
+
+            <div class="about_contents_smart_nav">
+                <div class="about_contents_nav_items">
+                    <section class="about_contents_nav_item">
+                        <%= link_to image_tag("/sample_menu.png"), "/maps" %>
+                        <div class="nav_item_title">
+                            <div class="item_padding">
+                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="about_contents_nav_item">
+                        <%= link_to image_tag("/sample_menu.png"), "/maps" %>
+                        <div class="nav_item_title">
+                            <div class="item_padding">
+                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="about_contents_nav_item">
+                        <%= link_to image_tag("/sample_menu.png"), "/maps" %>
+                        <div class="nav_item_title">
+                            <div class="item_padding">
+                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="about_contents_nav_item">
+                        <%= link_to image_tag("/sample_menu.png"), "/maps" %>
+                        <div class="nav_item_title">
+                            <div class="item_padding">
+                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="about_contents_nav_item">
+                        <%= link_to image_tag("/sample_menu.png"), "/maps" %>
+                        <div class="nav_item_title">
+                            <div class="item_padding">
+                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
+    
+    <script>
+        const init = function(){
+            let items = document.querySelectorAll('section');
+            for (let i = 0; i < items.length; i++){
+                items[i].style.background = randomColor({luminosity: 'light'});
+            }
+            cssScrollSnapPolyfill()
+        }
+        init();
+    </script>
     <% if @current_user %>
     <% else %>
         <div class="recommend_login">
