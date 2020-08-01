@@ -648,7 +648,7 @@ li{
         scroll-snap-type: x mandatory;
         display: flex;
         overflow-x: scroll;
-        scroll-margin: 10vw;
+        scroll-padding: 10vw;
     }
 
     .about_contents_nav_items{
