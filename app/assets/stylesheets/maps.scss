@@ -205,6 +205,13 @@ li{
         background-color: #D7EDDB;
     }
 
+    .about_menu_contens{
+        margin: 10vw;
+        width: 80vw;
+        font-size: 17px;
+        color: #147339;
+    }
+
     .about_aside{
         position: absolute;
         min-width: 300px;
@@ -257,16 +264,103 @@ li{
     }
 
     .about_contents{
-        height: 500px;
         margin-top: -6px;
-        padding: 30px 0 0 30px;
+        padding-top: 1vw;
         background-color: #147339;
     }
 
     .about_contents_title{
+        padding-left: 4vw;
         color:white;
         opacity: 1.0;
     }
+
+    .about_contents_nav{
+        margin-top: 4vw;
+        display: flex;
+    }
+
+    .about_contents_nav_long_item{
+        position: relative;
+        width: 44vw;
+        height: 44vw;
+        margin-left: 4vw;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .about_contents_nav_short_items{
+        display: flex;
+        flex-wrap: wrap;
+        width: 48vw;
+    }
+
+    .about_contents_nav_short_item{
+        position: relative;
+        width: 20vw;
+        height: 20vw;
+        margin: 0 0 4vw 4vw;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .about_contents_nav_short_item img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav_item_title{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #009944;
+    }
+
+    .item_padding{
+        padding: 16px;
+    }
+
+    .nav_item_title a{
+        font-size: 14px;
+        color: white;
+    }
+
+
+    /* recommend_login */
+
+    .recommend_login{
+        padding: 4vw;
+    }
+
+    .recommend_login_title{
+        padding-bottom: 4vw;
+        opacity: 1.0;
+        color: #147339;
+    }
+
+    .recommend_login_form{
+        display: flex;
+    }
+
+    .recommend_login_form li{
+        margin: 0 13vw;
+        border: none;
+        border-radius: 21px;
+        color: white;
+        background-color: #147339;
+        width: 20vw;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .recommend_login_form a{
+        color: white;
+    }
+    
 }
 
 
@@ -500,11 +594,15 @@ li{
 
     /* ペットマップとは */
 
-    .about_title{
-        margin: 0 100px;
-        padding-top: 9px;
-        text-align: center;
-        z-index: 1;
+    .about_all{
+        background-color: #D7EDDB;
+    }
+
+    .about_menu_contens{
+        margin: 15vw;
+        width: 70vw;
+        font-size: 10px;
+        color: #147339;
     }
 
     /* about_menu */
@@ -513,8 +611,25 @@ li{
         width: 100%;
     }
 
+    .about_title{
+        margin: 0 100px;
+        padding-top: 14px;
+        opacity: 1.0;
+        font-size: 15px;
+        color: #147339;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .about_contents{
+        margin-top: -6px;
+        padding-top: 1vw;
+        background-color: #147339;
+    }
+
     .about_contents_title{
         color:white;
         opacity: 1.0;
+        font-size: 15px;
     }
 }

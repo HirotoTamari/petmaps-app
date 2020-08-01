@@ -90,15 +90,12 @@ class UsersController < ApplicationController
   end
 
   def forget_password
-    @user = User.find_by(id: params[:id])
   end
 
   def reregister_password
-    @user = User.find_by(id: params[:id])
   end
 
   def confirm_mail
-    @user = User.find_by(id: params[:id])
   end
   
   def ensure_correct_user
