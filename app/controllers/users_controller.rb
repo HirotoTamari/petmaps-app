@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
   
   def create
-    @route = Route.find_by(id: params[:id])
     @route1 = Route.find_by(id: 1)
     @route2 = Route.find_by(id: 2)
     @route3 = Route.find_by(id: 3)
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "default_user.png",
+      image_name: "/default_user.jpg",
       password: params[:password],
       route1_id: @route1.id,
       route2_id: @route2.id,
