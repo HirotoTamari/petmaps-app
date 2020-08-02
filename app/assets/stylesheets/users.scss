@@ -26,7 +26,7 @@
         height: 100vh;
         position: fixed;
         background-color: white;
-        box-shadow: 0 2px 6px #888888;
+        box-shadow: 0 2px 6px #888;
     }
 
     .maps_menu li{
@@ -48,7 +48,7 @@
         height: 105px;
         font-size: 20px;
         opacity: 0.7;
-        border-bottom: solid 1px #888888;
+        border-bottom: solid 1px #888;
     }
 
     .users_title{
@@ -60,7 +60,7 @@
 
     .user_name{
         font-size: 13px;
-        color: #888888;
+        color: #888;
         margin: 20px 0 10px 0;
     }
 
@@ -87,7 +87,7 @@
         border: none;
         border-radius: 3px;
         color: white;
-        background-color: #888888;
+        background-color: #0079ff;
         width: 80px;
         height: 30px;
         font-size: 15px;
@@ -97,7 +97,7 @@
         border: none;
         border-radius: 3px;
         color: white;
-        background-color: #888888;
+        background-color: #0079ff;
         width: 80px;
         height: 30px;
         font-size: 15px;
@@ -113,7 +113,7 @@
 
     .input_title{
         font-size: 13px;
-        color: #888888;
+        color: #0079ff;
     }
 
     /* マイルート */
@@ -160,7 +160,7 @@
         padding: 20px 0 20px 30px;
         background-color: white;
         overflow: hidden;
-        box-shadow: 0 2px 6px #888888;
+        box-shadow: 0 2px 6px #888;
     }
 
     .my_user_image{
@@ -174,7 +174,7 @@
         height: 7vh;
         border-radius: 100%;
         object-fit: cover;
-        border: solid 0.5px #888888;
+        border: solid 0.5px #888;
     }
 
     .routes{
@@ -259,7 +259,7 @@
         flex-direction: column;
         text-align: center;
         font-size: 12px;
-        color: #888888;
+        color: #888;
     }
 
     .routes_menu_image{
@@ -275,7 +275,7 @@
 /* ---------------------------------------スマホ用のCSS------------------------------------------- */
 @media screen and (max-width: 671px){
     .users_top{
-        background-color: #888888;
+        background-color: #0079ff;
     }
 
     /* ハンバーガーメニュー */
@@ -369,12 +369,12 @@
     }
 
     .my_user_image_opp{
-        margin-top: 30px;
-        width: 7vh;
-        height: 7vh;
+        margin: 30px 0 0 30vw;
+        width: 20vw;
+        height: 20vw;
         border-radius: 100%;
         object-fit: cover;
-        border: solid 0.5px #888888;
+        border: solid 0.5px #888;
     }
 
     .edit{
@@ -382,7 +382,7 @@
         text-align: center;
         border: none;
         border-radius: 3px;
-        background-color: #888888;
+        background-color: #0079ff;
         width: 80px;
         height: 30px;
         font-size: 15px;
@@ -404,7 +404,7 @@
         flex-direction: column;
         text-align: center;
         font-size: 12px;
-        color: #888888;
+        color: #888;
     }
 
     .routes_menu_image{
@@ -442,7 +442,7 @@
         border: none;
         border-radius: 21px;
         color: white;
-        background-color: #888888;
+        background-color: #0079ff;
         width: 79vw;
         height: 40px;
         font-size: 15px;
@@ -453,7 +453,7 @@
         border: none;
         border-radius: 3px;
         color: white;
-        background-color: #888888;
+        background-color: #0079ff;
         width: 80px;
         height: 30px;
         font-size: 15px;

@@ -202,14 +202,14 @@ li{
     /* ペットマップとは */
 
     .about_all{
-        background-color: #e4ffe9;
+        background-color: white;
     }
 
     .about_menu_contens{
         margin: 10vw;
         width: 80vw;
         font-size: 17px;
-        color: #147339;
+        color: #0079ff;
     }
 
     .about_aside{
@@ -251,7 +251,7 @@ li{
         padding: 30px 0;
         margin: 0 50px;
         opacity: 1.0;
-        color: #147339;
+        color: #0079ff;
         text-align: center;
     }
 
@@ -266,7 +266,7 @@ li{
     .about_contents{
         margin-top: -6px;
         padding-top: 1vw;
-        background-color: #147339;
+        background-color: #0011ff;
     }
 
     .about_contents_title{
@@ -319,7 +319,7 @@ li{
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-color: #009944;
+        background-color: #0079ff;
     }
 
     .item_padding{
@@ -341,7 +341,7 @@ li{
     .recommend_login_title{
         padding-bottom: 4vw;
         opacity: 1.0;
-        color: #147339;
+        color: #0011ff;
     }
 
     .recommend_login_form{
@@ -353,7 +353,7 @@ li{
         border: none;
         border-radius: 21px;
         color: white;
-        background-color: #147339;
+        background-color: #0011ff;
         width: 20vw;
         height: 40px;
         line-height: 40px;
@@ -544,6 +544,14 @@ li{
         outline: none;
     }
 
+    #search_button:active{
+        padding-top: 2px;
+        width: 45px;
+        height: 45px;
+        border: none;
+        outline: none;
+    }
+
     #address_form{
         position: relative;
     }
@@ -599,14 +607,14 @@ li{
     /* ペットマップとは */
 
     .about_all{
-        background-color: #e4ffe9;
+        background-color: white;
     }
 
     .about_menu_contens{
         margin: 15vw;
         width: 70vw;
         font-size: 13px;
-        color: #147339;
+        color: #0079ff;
     }
 
     /* about_menu */
@@ -620,7 +628,7 @@ li{
         padding-top: 15px;
         opacity: 1.0;
         font-size: 15px;
-        color: #147339;
+        color: #0079ff;
         text-align: center;
         z-index: 1;
     }
@@ -628,7 +636,7 @@ li{
     .about_contents{
         margin: -6px 0 50px 0;
         padding-top: 1vw;
-        background-color: #147339;
+        background-color: #0011ff;
     }
 
     .about_contents_title{
@@ -675,7 +683,7 @@ li{
         position: absolute;
         bottom: 0;
         width: 100%;
-        background-color: #009944;
+        background-color: #0079ff;
     }
 
     .item_padding{
@@ -688,7 +696,7 @@ li{
     }
 
     .recommend_login_title{
-        color: #009944;
+        color: #0079ff;
         opacity: 1.0;
         font-size: 15px;
         padding-left: 10vw;
@@ -705,8 +713,7 @@ li{
         border: none;
         border-radius: 21px;
         color: white;
-        background-color: #147339;
-        box-shadow: 0 2px 6px #0E4C24;
+        background-color: #0011ff;
         width: 80vw;
         height: 40px;
         line-height: 40px;

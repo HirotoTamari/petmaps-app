@@ -54,7 +54,8 @@ h1,h2,p{
     .nav_menu{
         display: flex;
         width: 100vw;
-        background-color: #888888;
+        background-color: #0079ff;
+        box-shadow: 6px 2px 8px #0011ff;
         justify-items: center;
     }
 

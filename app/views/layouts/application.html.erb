@@ -16,7 +16,7 @@
         <nav class="nav_menu">
           <%# ユーザの認識 %>
           <% if @current_user %>
-            <div class="menu_item">
+            <div class="menu_item">   <%# マイページのアイコン %>
               <%# ページの認識 %>
               <% if current_page?("/users/#{@current_user.id}") or current_page?("/users/#{@current_user.id}/edit")%>
                 <li>
@@ -31,7 +31,7 @@
                   <%= link_to( "マイページ", "/users/#{@current_user.id}") %>
                 </li>
             </div>
-            <div class="menu_item">
+            <div class="menu_item">   <%# ペットマップのアイコン %>
               <%# ページの認識 %>
               <% if current_page?(controller: "maps", action:"map") or current_page?(controller: "maps", action:"index") or current_page?(controller: "maps", action:"about") %>
                 <li>
@@ -46,7 +46,7 @@
                   <%= link_to( "ペットマップ", "/maps") %>
                 </li>
             </div>
-            <div class="menu_item">
+            <div class="menu_item">   <%# 提案のアイコン %>
               <%# ページの認識 %>
               <% if current_page?(controller: "maps", action:"index") or current_page?(controller: "maps", action:"map") or current_page?(controller: "maps", action:"about") or current_page?(controller: "routes", action:"index")%>
                 <li>
@@ -65,7 +65,7 @@
                 <% end %>
               <% end %>
                 <li>
-                  <%= link_to( "ペットマップ", "/maps/index") %>
+                  <%= link_to( "提案する", "/posts/index") %>
                 </li>
             </div>
           <% else %>
