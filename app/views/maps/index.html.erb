@@ -248,26 +248,11 @@
             var request = {
                 query : "動物病院",
                 radius : 10000,
+                fields: ["name", "formatted_address", "place_id", "geometry"],
                 location : map.getCenter()
             };
+        
             service.textSearch(request, hospital_result_search);
-
-            //現在地にマーカを表示
-            let a = navigator.geolocation.getCurrentPosition(get_pos);
-            function get_pos(position) {
-                let lat = position.coords.latitude;　// 緯度
-                let lng = position.coords.longitude; // 経度
-                let latLng = new google.maps.LatLng(lat, lng);
-                var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
-                    position: latLng,
-                    map: map,
-                    icon: {
-                        url: "/icon/me_marker.png",
-                        scaledSize: new google.maps.Size(29.4, 40)
-                    }
-                });
-                map.setCenter(latLng);
-                }
         }
 
         // Hospitalの検索の結果を受け取る
@@ -276,7 +261,8 @@
             for(var i = 0; i < results.length; i++){
                 createMarker({
                     position : results[i].geometry.location,
-                    text : results[i].name,
+                    text : results[i].name + "<br>" +
+                            results[i].name,
                     map : map,
                     icon: {
                         url: "/icon/hospital_marker.png",
@@ -286,6 +272,14 @@
                 bounds.extend(results[i].geometry.location);
             }
             map.fitBounds(bounds);
+            var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
+                    position: map.getCenter(),
+                    map: map,
+                    icon: {
+                        url: "/icon/me_marker.png",
+                        scaledSize: new google.maps.Size(29.4, 40)
+                    }
+                });
         }
 
         //トリミングを検索
@@ -360,7 +354,7 @@
         function createMarker(options) {
             // マップ情報を保持しているmapオブジェクトを指定
             options.map = map;
-            // Markcrクラスのオブジェクトmarkerを作成
+            // Markerクラスのオブジェクトmarkerを作成
             var marker = new google.maps.Marker(options);
             // 各施設の吹き出し(情報ウインドウ)に表示させる処理
             var infoWnd = new google.maps.InfoWindow();
