@@ -129,7 +129,7 @@
             let lng = position.coords.longitude; // 経度
             let latLng = new google.maps.LatLng(lat, lng);
             var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
-                position: map.getCenter(),
+                position: LatLng,
                 map: map,
                 icon: {
                     url: "/icon/me_marker.png",
@@ -153,10 +153,11 @@
 
         // 動物病院の検索
         const Trimming = document.getElementById("Trimming");
-        Hospital.addEventListener("click", function(){
+        Trimming.addEventListener("click", function(){
             map.addListener(Trimmings());
         });
 
+        map.panTo(map.getCenter());
     }
 
     function Restaurants(){
@@ -167,14 +168,6 @@
             let lat = position.coords.latitude;　// 緯度
             let lng = position.coords.longitude; // 経度
             let latLng = new google.maps.LatLng(lat, lng);
-            var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
-                position: latLng,
-                map: map,
-                icon: {
-                    url: "/icon/me_marker.png",
-                    scaledSize: new google.maps.Size(29.4, 40)
-                }
-            });
             $.ajax({
                 type : "get",
                 url　: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=ff6b15a9e19b5a50c29261914d61ec7e&with_pet=1&latitude="+
@@ -186,7 +179,7 @@
                     console.log(json.rest[i].url);
                     var latLng = new google.maps.LatLng(json.rest[i].latitude, json.rest[i].longitude); // 検索情報の経緯度
                     marker = new google.maps.Marker({
-                        position: latLng,
+                        position: map.getCenter(),
                         map: map,
                         icon: {
                             url: "/icon/restaurant_marker.png",
@@ -209,7 +202,6 @@
                 }
             }
             );
-            map.setCenter(latLng);　// 地図の中央に現在地を表示する
         }
     }
         
