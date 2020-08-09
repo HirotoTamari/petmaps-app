@@ -79,6 +79,12 @@
                 </li>
                 <li class="search_menu_text">病院</li>
             </div>
+            <div class="search_menu">
+                <li>
+                    <input class="search_button" type="image"  id="Trimming" src="/icon/_trimming.png">
+                </li>
+                <li class="search_menu_text">トリミング</li>
+            </div>
         <% end %>
     </div>
     <div class="reset_position">
@@ -143,6 +149,12 @@
         const Hospital = document.getElementById("Hospital");
         Hospital.addEventListener("click", function(){
             map.addListener(Hospitals());
+        });
+
+        // 動物病院の検索
+        const Trimming = document.getElementById("Trimming");
+        Hospital.addEventListener("click", function(){
+            map.addListener(Trimmings());
         });
 
     }
@@ -255,7 +267,7 @@
         }
 
         //トリミングを検索
-        function Trimming() {
+        function Trimmings() {
             var latLng = new google.maps.LatLng(0,0);
             var mapOptions = {
                 center : latLng,
