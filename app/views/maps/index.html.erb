@@ -167,7 +167,7 @@
         function get_pos(position) {
             let lat = position.coords.latitude;　// 緯度
             let lng = position.coords.longitude; // 経度
-            let latLng = new google.maps.LatLng(lat, lng);
+            let latLngs = new google.maps.LatLng(lat, lng);
             $.ajax({
                 type : "get",
                 url　: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=ff6b15a9e19b5a50c29261914d61ec7e&with_pet=1&latitude="+
@@ -179,7 +179,7 @@
                     console.log(json.rest[i].url);
                     var latLng = new google.maps.LatLng(json.rest[i].latitude, json.rest[i].longitude); // 検索情報の経緯度
                     marker = new google.maps.Marker({
-                        position: map.getCenter(),
+                        position: latLng,
                         map: map,
                         icon: {
                             url: "/icon/restaurant_marker.png",
@@ -260,14 +260,6 @@
 
         //トリミングを検索
         function Trimmings() {
-            var latLng = new google.maps.LatLng(0,0);
-            var mapOptions = {
-                center : latLng,
-                zoom: 5,
-                mapTypeId : google.maps.MapTypeId.ROADMAP
-            };
-            // #map_canva要素にMapクラスの新しいインスタンスを作成
-            map = new google.maps.Map(document.getElementById("map"), mapOptions);
             service = new google.maps.places.PlacesService(map);
             var request = {
                 query : "トリミング",
@@ -275,23 +267,6 @@
                 location : map.getCenter()
             };
             service.textSearch(request, trimming_result_search);
-
-            //現在地にマーカを表示
-            let a = navigator.geolocation.getCurrentPosition(get_pos);
-            function get_pos(position) {
-                let lat = position.coords.latitude;　// 緯度
-                let lng = position.coords.longitude; // 経度
-                let latLng = new google.maps.LatLng(lat, lng);
-                var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
-                    position: latLng,
-                    map: map,
-                    icon: {
-                        url: "/icon/me_marker.png",
-                        scaledSize: new google.maps.Size(29.4, 40)
-                    }
-                });
-                map.setCenter(latLng);
-                }
         }
 
         // Hospitalの検索の結果を受け取る
