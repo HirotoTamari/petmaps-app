@@ -125,6 +125,7 @@
 
     .myroute select{
         margin-top: 10px;
+        padding-left: 10px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -132,6 +133,7 @@
         border-radius: 3px;
         width: 150px;
         height: 30px;
+        line-height: 30px;
         background-color: #e2e2e2;
     }
 
@@ -483,6 +485,7 @@
         border-radius: 3px;
         background-color: #e2e2e2;
         height: 30px;
+        line-height: 30px;
         width: 79vw;
     }
 }
