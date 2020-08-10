@@ -166,7 +166,7 @@
         let a = navigator.geolocation.getCurrentPosition(get_pos);
         function get_pos(position) {
             let latlngs = map.getCenter();
-            let lat = latlngs.lat();　// 緯度
+            let lat = latlngs.lat(); // 緯度
             let lng = latlngs.lng(); // 経度
             $.ajax({
                 type : "get",

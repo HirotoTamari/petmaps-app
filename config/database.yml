@@ -23,6 +23,7 @@ test:
 production:
   <<: *default
   # database: db/production.sqlite3
+  usl: postgres://aietpthshnvppq:c9581f6717971fa7b66ecde3792ee8663e3a1f848846d75e173d18564150bb6b@ec2-34-239-241-25.compute-1.amazonaws.com:5432/d4soikgv5i11n5
   adapter: postgresql
   encoding: unicode
   pool: 5
