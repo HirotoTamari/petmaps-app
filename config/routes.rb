@@ -38,11 +38,4 @@ Rails.application.routes.draw do
   post "routes/:id/update" => "routes#update"     #編集の実行
   post "routes/:id/destroy" => "routes#destroy"   #削除
 
-  # # ソーシャルログイン
-  # devise_for :users,
-  # controllers: {
-  #   registrations: 'users/registrations' ,
-  #   omniauth_callbacks: 'users/omniauth_callbacks'
-  # }
-
 end
