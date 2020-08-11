@@ -22,6 +22,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# ソーシャルログインの準備
+gem 'devise'
+gem 'omniauth'
+# facebook
+gem 'omniauth-facebook'
+# google
+gem 'omniauth-google-oauth2'
+# twitter
+gem 'omniauth-twitter'
+
 gem 'bcrypt'
 
 gem 'dotenv-rails'

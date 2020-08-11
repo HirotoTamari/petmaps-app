@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_074732) do
+ActiveRecord::Schema.define(version: 2020_08_11_044929) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_07_30_074732) do
     t.integer "route2_id"
     t.integer "route3_id"
     t.string "password_digest"
+    t.string "uid"
+    t.string "provider"
   end
 
 end
