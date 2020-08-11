@@ -60,18 +60,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def sns
-    @user = User.new(
-      name: session[:name],
-      email: session[:email],
-      password: session[:password],
-      )
-  end
+  # def sns
+  #   @user = User.new(
+  #     name: session[:name],
+  #     email: session[:email],
+  #     password: session[:password],
+  #     )
+  # end
 
-  def create
-    super
-    @user.uid = session[:uid]
-    @user.provider = session[:provider]
-    @user.save
-  end
+  # def create
+  #   super
+  #   @user.uid = session[:uid]
+  #   @user.provider = session[:provider]
+  #   @user.save
+  # end
 end
