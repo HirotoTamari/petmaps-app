@@ -29,8 +29,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 # google
 gem 'omniauth-google-oauth2'
-# twitter
-gem 'omniauth-twitter'
 
 gem 'bcrypt'
 
