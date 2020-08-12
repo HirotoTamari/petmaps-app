@@ -245,12 +245,13 @@
                 createMarker({
                     position : results[i].geometry.location,
                     text : results[i].name + "<br>" +
-                            results[i].name,
+                            results[i].formatted_address,
                     map : map,
                     icon: {
                         url: "/icon/hospital_marker.png",
                         scaledSize: new google.maps.Size(32, 45)
-                    }
+                    },
+                    url: results[i].url}*_
                 });
                 bounds.extend(results[i].geometry.location);
             }
@@ -274,7 +275,8 @@
             for(var i = 0; i < results.length; i++){
                 createMarker({
                     position : results[i].geometry.location,
-                    text : results[i].name,
+                    text : results[i].name + "<br>" +
+                            results[i].formatted_address,
                     map : map,
                     icon: {
                         url: "/icon/trimming_marker.png",
@@ -292,7 +294,8 @@
             for(var i = 0; i < results.length; i++){
                 createMarker({
                     position : results[i].geometry.location,
-                    text : results[i].name,
+                    text : results[i].name + "<br>" +
+                            results[i].formatted_address,
                     map : map
                 });
                 bounds.extend(results[i].geometry.location);
@@ -327,5 +330,4 @@
     </script>
     <%# Googlemap APIの取得 %>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB87mkMD4fPhUltHTMmsdkUYzzyL0WoOtI&callback=initMap&libraries=places" async defer></script>
-    
 </body>
