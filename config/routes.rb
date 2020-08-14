@@ -38,12 +38,4 @@ Rails.application.routes.draw do
   get "routes/:id/edit" => "routes#edit"          #編集
   post "routes/:id/update" => "routes#update"     #編集の実行
   post "routes/:id/destroy" => "routes#destroy"   #削除
-
-  devise_for :users,
-  controllers: {
-    sessions: 'users/sessions',
-    registrations: "users/registrations",
-    omniauth_callbacks: 'users/omniauth_callbacks'
-  }
-
 end
