@@ -82,13 +82,15 @@
                         <input type="password" name="password" value="<%= @password %>" class="textbox">
                         <input type="submit" value="ログイン" class="textbutton">
                         <% end %>
-                        <%# ソーシャルログイン %>
+
+                        <!-- <%# ソーシャルログイン %>
                         <div class="social_login_form">
                             <%= link_to( "Facebookでログイン", "/user_facebook_omniauth_authorize_path" ) %>
                         </div>
                         <div class="social_login_form">
                             <%= link_to( "Googleでログイン", "/user_google_oauth2_omniauth_authorize_path" ) %>
-                        </div>
+                        </div> -->
+                        
                         <%# アカウント作成の案内 %>
                         <div class="signup_form">
                             <p class="input_title">アカウントをお持ちでない方は</p>

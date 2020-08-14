@@ -170,7 +170,7 @@
             let lng = latlngs.lng(); // 経度
             $.ajax({
                 type : "get",
-                url　: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=API_KEY&with_pet=1&latitude="+
+                url　: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=ff6b15a9e19b5a50c29261914d61ec7e&with_pet=1&latitude="+
                         lat+"&longitude="+lng+"&range=5&category_l=RSFST20000,RSFST18000",  // ぐるなびの情報を取得
                 dataType : 'json',
                 success　: function(json){
@@ -328,6 +328,6 @@
         google.maps.event.addDomListener(window, 'load', initMap);
     </script>
     <%# Googlemap APIの取得 %>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap&libraries=places" async defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB87mkMD4fPhUltHTMmsdkUYzzyL0WoOtI&callback=initMap&libraries=places" async defer></script>
     
 </body>
