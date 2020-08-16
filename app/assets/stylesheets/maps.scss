@@ -230,7 +230,7 @@ li{
     }
 
     .about_menu_contents{
-        font-family: Roboto,sans-serif;
+        font-family: "Google Sans", "Arial", "sans-serif";
         margin: 30px 10vw;
         width: 80vw;
         font-size: 17px;
@@ -240,6 +240,7 @@ li{
     .about_contents_mov{
         display: flex;
         flex-wrap: wrap;
+        padding-bottom: 10vw;
     }
 
     .mov_contents_title{
@@ -704,7 +705,7 @@ li{
     }
 
     .about_menu_contents{
-        font-family: Roboto,sans-serif;
+        font-family: "Google Sans", "Arial", "sans-serif";
         margin: 20px 10vw;
         width: 80vw;
         font-size: 12px;
