@@ -8,7 +8,7 @@
 }
 
 .main_posts{
-    background-color: rgb(212, 212, 212);
+    background-color: #0079ff;
     display: flex;
 }
 
@@ -22,7 +22,6 @@
         height: 100vh;
         position: fixed;
         background-color: white;
-        box-shadow: 0 2px 6px #c1ced7;
     }
 
     .maps_menu li{
@@ -60,7 +59,8 @@
         padding-left: 30px;
         font-size: 25px;
         margin: 20px 20px 20px 10vw ;
-        opacity: 0.7;
+        opacity: 1.0;
+        color: white;
     }
 
     .posts_contents{
@@ -68,7 +68,8 @@
         margin: 20px 0 20px 10vw;
         padding-left: 30px;
         font-size: 15px;
-        opacity: 0.7;
+        opacity: 1.0;
+        color: white;
     }
 
     .containers{
@@ -102,7 +103,8 @@
     .posts_new_title{
         margin: 40px 0 20px 30px;
         font-size: 20px;
-        opacity: 0.7;
+        opacity: 1.0;
+        color: white;
     }
 
     .posts_new_content{
@@ -112,7 +114,6 @@
         border: none;
         font-size: 15px;
         border-radius: 3px;
-        box-shadow: 0 2px 6px #c1ced7;
     }
 
     .form_body{
@@ -127,9 +128,8 @@
         border: none;
         font-size: 15px;
         border-radius: 3px;
-        background-color: #0079ff;
-        color: white;
-        box-shadow: 0 2px 6px #c1ced7;
+        background-color: white;
+        color: #0079ff;
     }
 
 
@@ -152,7 +152,6 @@
     .posts_show_item{
         width: 80vw;
         background-color: white;
-        box-shadow: 0 2px 6px #c1ced7;
         padding: 20px 0 20px 30px;
     }
 
@@ -185,7 +184,6 @@
         border: none;
         font-size: 15px;
         border-radius: 3px;
-        box-shadow: 0 2px 6px #c1ced7;
     }
 }
 
