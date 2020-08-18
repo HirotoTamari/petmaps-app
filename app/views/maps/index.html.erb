@@ -85,6 +85,24 @@
                 </li>
                 <li class="search_menu_text">トリミング</li>
             </div>
+            <div class="search_menu">
+                <li>
+                    <input class="search_button" type="image"  id="a" src="/icon/restaurant_remove.png" onclick="R_removeMakers()">
+                </li>
+                <li class="search_menu_text">飲食店の削除</li>
+            </div>
+            <div class="search_menu">
+                <li>
+                    <input class="search_button" type="image"  id="a" src="/icon/hospital_remove.png" onclick="H_removeMakers()">
+                </li>
+                <li class="search_menu_text">病院の削除</li>
+            </div>
+            <div class="search_menu">
+                <li>
+                    <input class="search_button" type="image"  id="a" src="/icon/trimming_remove.png" onclick="T_removeMakers()">
+                </li>
+                <li class="search_menu_text">トリ..の削除</li>
+            </div>
         <% end %>
     </div>
     <div class="reset_position">
@@ -111,6 +129,10 @@
     let geocoder;
     let places;
     let marker;
+    let restaurantMarkers = [];
+    let hospitalMarkers = [];
+    let hotelMakers = [];
+    let trimmingMarkers = [];
 
     //地図の生成
     function initMap(){       
@@ -194,6 +216,7 @@
                         json.rest[i].image_url.shop_image1 + '><span class="shop-content"><span class="shop-name">' +
                         String(i+1) + " " + json.rest[i].name + '</span><span class="time">営業時間：' + json.rest[i].opentime +
                         '<</span></span></a></li>').appendTo('#shop-list');
+                        restaurantMarkers.push(marker);
                     }
                 },
                 error: function(json){
@@ -242,7 +265,7 @@
         function hospital_result_search(results, status) {
             var bounds = new google.maps.LatLngBounds();
             for(var i = 0; i < results.length; i++){
-                createMarker({
+                marker = createMarker({
                     position : results[i].geometry.location,
                     text : results[i].name + "<br>" +
                             results[i].formatted_address,
@@ -252,9 +275,11 @@
                         scaledSize: new google.maps.Size(32, 45)
                     }
                 });
+                hospitalMarkers.push(marker);
                 bounds.extend(results[i].geometry.location);
             }
             map.fitBounds(bounds);
+
         }
 
         //トリミングを検索
@@ -272,7 +297,7 @@
         function trimming_result_search(results, status) {
             var bounds = new google.maps.LatLngBounds();
             for(var i = 0; i < results.length; i++){
-                createMarker({
+                marker = createMarker({
                     position : results[i].geometry.location,
                     text : results[i].name + "<br>" +
                             results[i].formatted_address,
@@ -282,6 +307,7 @@
                         scaledSize: new google.maps.Size(32, 45)
                     }
                 });
+                trimmingMarkers.push(marker);
                 bounds.extend(results[i].geometry.location);
             }
             map.fitBounds(bounds);
@@ -300,6 +326,57 @@
                 bounds.extend(results[i].geometry.location);
             }
             map.fitBounds(bounds);
+        }
+
+        function R_removeMakers(idx=null) {
+            if(idx == null){
+                //生成済マーカーを順次すべて削除する
+                for (var i = 0; i < restaurantMarkers.length; i++) {
+                        restaurantMarkers[i].setMap(null);
+                }
+                restaurantMarkers = [];	//参照を開放
+            }else{
+                //生成済マーカーからID指定されたマーカーを削除
+                for (var i = 0; i < restaurantMarkers.length; i++) {
+                    if(idx.indexOf(i) >= 0){
+                        restaurantMarkers[i].setMap(null);
+                    }
+                }
+            }
+        }
+
+        function H_removeMakers(idx=null) {
+            if(idx == null){
+                //生成済マーカーを順次すべて削除する
+                for (var i = 0; i < hospitalMarkers.length; i++) {
+                        hospitalMarkers[i].setMap(null);
+                }
+                hospitalMarkers = [];	//参照を開放
+            }else{
+                //生成済マーカーからID指定されたマーカーを削除
+                for (var i = 0; i < hospitalMarkers.length; i++) {
+                    if(idx.indexOf(i) >= 0){
+                        hospitalMarkers[i].setMap(null);
+                    }
+                }
+            }
+        }
+
+        function T_removeMakers(idx=null) {
+            if(idx == null){
+                //生成済マーカーを順次すべて削除する
+                for (var i = 0; i < trimmingMarkers.length; i++) {
+                        trimmingMarkers[i].setMap(null);
+                }
+                trimmingMarkers = [];	//参照を開放
+            }else{
+                //生成済マーカーからID指定されたマーカーを削除
+                for (var i = 0; i < trimmingMarkers.length; i++) {
+                    if(idx.indexOf(i) >= 0){
+                        trimmingMarkers[i].setMap(null);
+                    }
+                }
+            }
         }
 
         function mapCenter(){
