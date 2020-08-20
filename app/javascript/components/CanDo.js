@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+var bool1 = Boolean("true");
+var bool2 = Boolean("false");
+
 
 class CanDo extends React.Component{
     constructor(props) {
@@ -9,17 +12,19 @@ class CanDo extends React.Component{
     
     handleClickCando() {
         this.setState({isModalOpen: true});
+        console.log(this.state);
     }
     
-    handleClickClose(){
+    handleClickClose() {
         this.setState({isModalOpen: false});
+        console.log("ok");
     }
 
     render(){
         let modal;
         if (this.state.isModalOpen) {
             modal = (
-                <div className='modal' onClick={() => {this.handleClickClose()}}>
+                <div className='modal'>
                     <div className='modal_inner'>
                         <div className="modal_mov">
                         <video autoPlay loop playsInline src={this.props.mov}></video>
@@ -28,20 +33,17 @@ class CanDo extends React.Component{
                             <h2>{this.props.name}</h2>
                         </div>
                         <div className="modal_content">
-                            <p>{this.props.content}</p>
+                            <p>{this.props.contents}</p>
                         </div>
-                        <div className="close_button" onClick={() => {this.handleClickClose()}}>
-                            <img src="/close_button.png" />
+                        <div className="close_button">
+                            <img src="/close_button.png" onClick={()=> {this.handleClickClose()}}/>
                         </div>
                     </div>
                 </div>
                 );
             }
         return(
-            <div
-                onClick={() => {
-                this.handleClickCando()
-                }}>
+            <div onClick={() => this.handleClickCando()}>
                 <img src={this.props.image} />
                 <div className="nav_item_title_1">
                     <div className="item_padding_1">

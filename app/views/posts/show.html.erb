@@ -81,8 +81,8 @@
                     <%= @post.created_at%>      <%# 作成日時の表示 %>
                 </div>
                 <div class="post_menus">
-                    <%= link_to("編集", "/posts/#{@post.id}/edit") %>                           <%# 編集　%>
-                    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>      <%# 削除　%>
+                    <%= link_to("編集", "/posts/#{@post.id}/edit") %>                           <%# 編集 %>
+                    <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>      <%# 削除 %>
                 </div>
             </div>
         </div>

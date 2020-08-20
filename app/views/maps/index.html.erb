@@ -38,7 +38,7 @@
         </aside>
 
         <%# 検索バー %>
-        <input id="address" type="textbox"　value="" placeholder="ここで検索してください">
+        <input id="address" type="textbox" value="" placeholder="ここで検索してください">
 
         <%# buttonをクリックしたらSearchGoを実行 %>
         <input id="address_button" type="image"  src="/icon/serch_icon.png" onclick="SearchGo()">
@@ -114,7 +114,7 @@
 
     <div class="gnavi">
         <a href="https://api.gnavi.co.jp/api/scope/" target="_blank">
-        <img class="gnavi_img" src="https://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト　ぐるなび">
+        <img class="gnavi_img" src="https://api.gnavi.co.jp/api/img/credit/api_265_65.gif" width="265" height="65" border="0" alt="グルメ情報検索サイト ぐるなび">
         </a>
     </div>
 
@@ -147,17 +147,17 @@
         //現在地の取得
         let a = navigator.geolocation.getCurrentPosition(get_pos);
         function get_pos(position) {
-            let lat = position.coords.latitude;　// 緯度
+            let lat = position.coords.latitude; // 緯度
             let lng = position.coords.longitude; // 経度
             let latLng = new google.maps.LatLng(lat, lng);
-            var marker = new google.maps.Marker({　// 現在地の位置設定とアイコンのカスタマイズ
+            var marker = new google.maps.Marker({ // 現在地の位置設定とアイコンのカスタマイズ
                 position: latLng,
                 map: map,
                 icon: {
                     url: "/icon/me_marker.png",
                     scaledSize: new google.maps.Size(29.4, 40)
                 }
-            });　// 地図の中央に現在地を表示する
+            }); // 地図の中央に現在地を表示する
             map.setCenter(latLng);
         }
 
@@ -192,10 +192,10 @@
             let lng = latlngs.lng(); // 経度
             $.ajax({
                 type : "get",
-                url　: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=ff6b15a9e19b5a50c29261914d61ec7e&with_pet=1&latitude="+
+                url : "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=ff6b15a9e19b5a50c29261914d61ec7e&with_pet=1&latitude="+
                         lat+"&longitude="+lng+"&range=5&category_l=RSFST20000,RSFST18000",  // ぐるなびの情報を取得
                 dataType : 'json',
-                success　: function(json){
+                success : function(json){
                     let num_shop = json.rest.length;
                     for( let i=0; i < num_shop; i++){
                     var latLng = new google.maps.LatLng(json.rest[i].latitude, json.rest[i].longitude); // 検索情報の経緯度

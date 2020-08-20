@@ -101,6 +101,7 @@ h1,h2,p{
         top: 8%;
         right: 0;
         left: 0;
+        bottom: 8%;
         width: 90vw;
         padding-bottom: 60px;
         margin: auto;
@@ -129,14 +130,20 @@ h1,h2,p{
     }   
 
     .close_button{
-        appearance: button;
-        padding: 5% 40%;
-        z-index: 3;
+        margin: 5% 44%;
     }
 
     .close_button img{
-        width: 20%;
-        z-index: 4;
+        width: 100%;
+    }
+
+    .close_button img:active{
+        width: 90%;
+        padding: 5%;
+    }
+
+    button{
+        appearance: button;
     }
 
     .about_contents_nav_items_1{
