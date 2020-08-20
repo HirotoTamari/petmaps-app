@@ -67,48 +67,12 @@
                     <p class="mov_contents_contents">より良いサービスを目指すためにあなたの意見を必要としています</p>
                 </div>
             </div>
-
-            <div class="about_contents_smart_nav">
-                <div class="about_contents_nav_items">
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_1_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットと楽しく便利な生活を過ごそう", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2_3.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "マイルートを設定しよう", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_3_1.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "このサービスに対して意見、提案をしよう", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+            
+            <div class="about_contents_smart_nav_1">
+                <%= react_component('CanDoList') %>
             </div>
         </div>
     </div>
-    
-    <script>
-        const init = function(){
-            let items = document.querySelectorAll('section');
-            for (let i = 0; i < items.length; i++){
-                items[i].style.background = randomColor({luminosity: 'light'});
-            }
-            cssScrollSnapPolyfill()
-        }
-        init();
-    </script>
     <% if @current_user %>
     <% else %>
         <div class="recommend_login">
