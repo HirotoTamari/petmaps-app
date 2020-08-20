@@ -1,9 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-var bool1 = Boolean("true");
-var bool2 = Boolean("false");
-
-
 class CanDo extends React.Component{
     constructor(props) {
         super(props);
@@ -33,9 +29,6 @@ class CanDo extends React.Component{
                         </div>
                         <div className="modal_content">
                             <p>{this.props.contents}</p>
-                        </div>
-                        <div className="close_button">
-                            <img src="/close_button.png"/>
                         </div>
                     </div>
                 </div>
