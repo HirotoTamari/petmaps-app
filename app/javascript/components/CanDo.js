@@ -12,7 +12,6 @@ class CanDo extends React.Component{
     
     handleClickClose() {
         this.setState({isModalOpen: false});
-        console.log("ok");
     }
 
     render(){
