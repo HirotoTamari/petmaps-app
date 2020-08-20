@@ -12,7 +12,6 @@ class CanDo extends React.Component{
     
     handleClickCando() {
         this.setState({isModalOpen: true});
-        console.log(this.state);
     }
     
     handleClickClose() {
@@ -24,7 +23,7 @@ class CanDo extends React.Component{
         let modal;
         if (this.state.isModalOpen) {
             modal = (
-                <div className='modal'>
+                <div className='modal' onClick={()=> this.handleClickClose()}>
                     <div className='modal_inner'>
                         <div className="modal_mov">
                         <video autoPlay loop playsInline src={this.props.mov}></video>
@@ -36,17 +35,17 @@ class CanDo extends React.Component{
                             <p>{this.props.contents}</p>
                         </div>
                         <div className="close_button">
-                            <img src="/close_button.png" onClick={()=> {this.handleClickClose()}}/>
+                            <img src="/close_button.png"/>
                         </div>
                     </div>
                 </div>
                 );
             }
         return(
-            <div onClick={() => this.handleClickCando()}>
-                <img src={this.props.image} />
+            <div>
+                <img src={this.props.image} onClick={() => this.handleClickCando()}/>
                 <div className="nav_item_title_1">
-                    <div className="item_padding_1">
+                    <div className="item_padding_1"　onClick={() => this.handleClickCando()}>
                         {this.props.name}
                     </div>
                 </div>
