@@ -158,8 +158,15 @@
                     scaledSize: new google.maps.Size(29.4, 40)
                 }
             }); // 地図の中央に現在地を表示する
-            map.setCenter(latLng);
         }
+
+        service = new google.maps.places.PlacesService(map);
+            var request = {
+                query : "動物病院",
+                radius : 10000,
+                location : map.getCenter()
+            };
+            service.textSearch(request, hospital_result_search);
 
         // 飲食店の検索
         const Restaurant = document.getElementById("Restaurant");
