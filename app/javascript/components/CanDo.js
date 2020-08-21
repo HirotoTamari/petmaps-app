@@ -21,7 +21,7 @@ class CanDo extends React.Component{
                 <div className='modal' onClick={()=> this.handleClickClose()}>
                     <div className='modal_inner'>
                         <div className="modal_mov">
-                        <video autoPlay loop playsInline src={this.props.mov}></video>
+                        <img src={this.props.mov} />
                         </div>
                         <div className="modal_title">
                             <h2>{this.props.name}</h2>
@@ -35,7 +35,7 @@ class CanDo extends React.Component{
             }
         return(
             <div>
-                <img src={this.props.image} onClick={() => this.handleClickCando()}/>
+                <img src={this.props.image} className="nav_item_img" onClick={() => this.handleClickCando()}/>
                 <div className="nav_item_title_1">
                     <div className="item_padding_1"　onClick={() => this.handleClickCando()}>
                         {this.props.name}

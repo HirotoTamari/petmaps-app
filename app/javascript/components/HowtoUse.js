@@ -24,7 +24,7 @@ class HowtoUse extends React.Component{
                         <div class="how_to_use_item">
                             <p className="how_to_use_titles">マーカの表示</p>
                             <div className="how_to_use_mov">
-                                <video autoPlay loop playsInline src="how_to_use_1.mp4"></video>
+                                <img src="how_to_use_1.gif" />
                             </div>
                             <p className="how_to_use_content">
                                 それぞれのアイコンをクリックするとそれぞれのお店の位置にマーカを表示します
@@ -33,7 +33,7 @@ class HowtoUse extends React.Component{
                         <div class="how_to_use_item">
                             <p className="how_to_use_titles">マーカの削除</p>
                             <div className="how_to_use_mov">
-                                <video autoPlay loop playsInline src="how_to_use_2.mp4"></video>
+                                <img src="how_to_use_2.gif" />
                             </div>
                             <p className="how_to_use_content">
                                 「○○の削除」のアイコンをクリックすると○○（ 例えば、病院 ）の位置にマーカを削除します
@@ -42,7 +42,7 @@ class HowtoUse extends React.Component{
                         <div class="how_to_use_item">
                             <p className="how_to_use_titles">位置情報の設定のお願い</p>
                             <div className="how_to_use_mov">
-                                <video autoPlay loop playsInline src="how_to_use_3.mp4"></video>
+                                <img src="how_to_use_3.gif" />
                             </div>
                             <p className="how_to_use_content">
                                 マップ画面で位置情報が必要になるので位置情報の設定を行ってください

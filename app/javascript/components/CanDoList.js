@@ -8,19 +8,19 @@ class CanDoList extends React.Component{
             {
                 name: "ペットと楽しく便利な生活を過ごそう",
                 image: "/cando_1_2.png",
-                mov: "/cando_1_3.mp4",
+                mov: "/cando_1_3.gif",
                 contents: "ペットと一緒に入れる飲食店、ホテル、動物病院やトリミング店をペットマップの画面で探すことができます",
             },
             {
                 name: "マイルートを設定しよう",
                 image: "/cando_2_3.png",
-                mov: "/cando_2_2.mp4",
+                mov: "/cando_2_2.gif",
                 contents: "ペットと一緒に入れる飲食店、ホテル、動物病院やトリミング店などあなたがよく使う場所を好きな順番でカスタムできます",
             },
             {
                 name: "このサービスに対して意見、提案をしよう",
                 image: "/cando_3_1.png",
-                mov: "/cando_3_1.mp4",
+                mov: "/cando_3_1.gif",
                 contents: "より良いサービスを目指すためにあなたの意見を必要としています",
             }
         ];
