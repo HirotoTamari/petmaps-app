@@ -105,6 +105,9 @@
             </div>
         <% end %>
     </div>
+    <div>
+        <%= react_component('HowtoUse') %>
+    </div>
     <div class="reset_position">
         <li>
             <input class="search_button" type="image"  src="/icon/position.png" onclick="initMap()">
@@ -159,14 +162,8 @@
                 }
             }); // 地図の中央に現在地を表示する
         }
-
-        service = new google.maps.places.PlacesService(map);
-            var request = {
-                query : "動物病院",
-                radius : 10000,
-                location : map.getCenter()
-            };
-            service.textSearch(request, hospital_result_search);
+        
+        Hospitals();
 
         // 飲食店の検索
         const Restaurant = document.getElementById("Restaurant");

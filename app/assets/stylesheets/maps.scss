@@ -24,6 +24,14 @@ li{
 /* -------------------------------------- Web用のCSS ------------------------------------*/
 
 @media screen and (min-width: 671px){
+    /* Google Mapsの設定*/
+    .gm-svpc{
+        display: none !important;
+    }
+
+    .gmnoprint{
+        display: none !important;
+    }
 
     /* 検索バー */
     .serch_box{
@@ -39,6 +47,107 @@ li{
         margin: 10px;
 
         z-index: 2;
+    }
+
+    /* 利用方法 */
+    .how_to_use{
+        position: absolute;
+        height: 80vh;
+        margin: -83vh -94vw;
+        background-color: white;
+        z-index: 4;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0,0,0,.3);
+    }
+
+    .how_to_use_title{
+        text-align: center;
+        padding: 20px;
+        opacity: 1.0;
+        font-size: 27px;
+        color: #0079ff;
+    }
+
+    .how_to_use_items{
+        display: flex;
+    }
+
+    .how_to_use_item{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 33vw;
+    }
+
+    .manual_position{
+        margin: 0 1vw 1vh 0;
+        position: absolute;
+        height: 8vh;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        z-index: 3;
+    }
+
+    .manual_marker{
+        text-align: center;
+    }
+
+    .how_to_use_acsess{
+        text-align: center;
+        line-height: 0px;
+        font-size: 5px;
+        text-shadow    : 
+            2px  2px 1px #ffffff,
+            -2px  2px 1px #ffffff,
+            2px -2px 1px #ffffff,
+            -2px -2px 1px #ffffff,
+            2px  0px 1px #ffffff,
+            0px  2px 1px #ffffff,
+            -2px  0px 1px #ffffff,
+            0px -2px 1px #ffffff;
+    }
+
+    .how_to_use_titles{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        font-weight: 700;
+        margin: 4% 2% 2% 5%;
+        opacity: 1.0;
+        font-size: 20px;
+        color: #0079ff;
+    }
+
+    .how_to_use_mov{
+        margin: 5%;
+        border: none;
+        overflow: hidden;
+    }
+
+    .how_to_use_mov video{
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .how_to_use_content{
+        margin: 5% 5% 15% 5%;
+        font-size: 13px;
+        color: #0079ff;
+    }
+
+    .start_button{
+        margin: 5% 30%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        width: 40%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        opacity: 1.0;
+        color: white;
+        background-color: #0079ff;
     }
     
     /* ハンバーガーメニュー */
@@ -188,10 +297,10 @@ li{
     }
 
     .reset_position{
-        margin: 0 6px 25vh 0;
+        margin: 0 1vw 1vh 0;
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 70px;
         display: flex;
         flex-direction: column;
         width: 50px;
@@ -453,6 +562,94 @@ li{
         display: none !important;
     }
 
+    /* 利用方法 */
+    .how_to_use{
+        position: absolute;
+        width: 101vw;
+        margin: -92vh -87vw;
+        background-color: white;
+        z-index: 4;
+    }
+
+    .how_to_use_title{
+        text-align: center;
+        padding: 20px;
+        opacity: 1.0;
+        font-size: 18px;
+        color: #0079ff;
+    }
+
+    .manual_position{
+        margin: 0 1vw 1vh 0;
+        position: absolute;
+        height: 7vh;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        z-index: 3;
+    }
+
+    .manual_marker{
+        text-align: center;
+    }
+
+    .how_to_use_acsess{
+        text-align: center;
+        line-height: 0px;
+        font-size: 10px;
+        text-shadow    : 
+            2px  2px 1px #ffffff,
+            -2px  2px 1px #ffffff,
+            2px -2px 1px #ffffff,
+            -2px -2px 1px #ffffff,
+            2px  0px 1px #ffffff,
+            0px  2px 1px #ffffff,
+            -2px  0px 1px #ffffff,
+            0px -2px 1px #ffffff;
+    }
+
+    .how_to_use_titles{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        font-weight: 700;
+        margin: 9% 5% 5% 5%;
+        opacity: 1.0;
+        font-size: 15px;
+        color: #0079ff;
+    }
+
+    .how_to_use_mov{
+        margin: 5%;
+        border: none;
+        overflow: hidden;
+    }
+
+    .how_to_use_mov video{
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .how_to_use_content{
+        margin: 5% 5% 15% 5%;
+        font-size: 13px;
+        color: #0079ff;
+    }
+
+    .start_button{
+        margin: 5% 30%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        width: 40%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        opacity: 1.0;
+        color: white;
+        background-color: #0079ff;
+    }
+
     /* 検索バー */
     .bottom_nav{
         display: none !important;
@@ -604,10 +801,10 @@ li{
     }
 
     .reset_position{
-        margin: 0 10px 10px 0;
+        margin: 0 1vw 1vh 0;
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 70px;
         display: flex;
         flex-direction: column;
         width: 50px;
@@ -623,8 +820,8 @@ li{
     }
 
     .search_button{
-        width: 50px;
-        height: 50px;
+        width: 13vw;
+        height: auto;
         border: none;
         outline: none;
     }
