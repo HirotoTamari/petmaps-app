@@ -6,11 +6,11 @@
     <div class="serch_box">
         <%# ハンバーガーメニュー %>
         <input id="hamburger_menu" type="checkbox" />
-        <label for="hamburger_menu" class="open"><img class="hamburger_icon" src="/icon/hamburger_icon.png"></label>
+        <label for="hamburger_menu" class="open"><img class="hamburger_icon" src="/icon_svg/hamburger_icon.svg"></label>
 
         <%# ハンバーガーメニューの中身 %>
         <aside>
-            <label for="hamburger_menu" class="close"><img class="hamburger_icon" src="/icon/hamburger_close_icon.png"></label>
+            <label for="hamburger_menu" class="close"><img class="hamburger_icon" src="/icon_svg/hamburger_close_icon.svg"></label>
 
             <nav class="hamburger_menu">
                 <% if @current_user %>
@@ -41,7 +41,7 @@
         <input id="address" type="textbox" value="" placeholder="ここで検索してください">
 
         <%# buttonをクリックしたらSearchGoを実行 %>
-        <input id="address_button" type="image"  src="/icon/serch_icon.png" onclick="SearchGo()">
+        <input id="address_button" type="image"  src="/icon_svg/serch_icon.svg" onclick="SearchGo()">
     </div>
 
     <%# アイコンをクリックするとroute.function_nameを実行 %>
@@ -68,32 +68,32 @@
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/restaurant_remove.png" onclick="R_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/restaurant_remove.svg" onclick="R_removeMakers()">
                 </li>
                 <li class="search_menu_text">飲..の削除</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/hospital_remove.png" onclick="H_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/hospital_remove.svg" onclick="H_removeMakers()">
                 </li>
                 <li class="search_menu_text">病院の削除</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/trimming_remove.png" onclick="T_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/trimming_remove.svg" onclick="T_removeMakers()">
                 </li>
                 <li class="search_menu_text">ト..の削除</li>
             </div>
         <% else %>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="Restaurant" src="/icon/restaurant.png">
+                    <input class="search_button" type="image"  id="Restaurant" src="/icon_svg/restaurant.svg">
                 </li>
                 <li class="search_menu_text">飲食店</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="Hospital" src="/icon/hospital.png">
+                    <input class="search_button" type="image"  id="Hospital" src="/icon_svg/hospital.svg">
                 </li>
                 <li class="search_menu_text">病院</li>
             </div>
@@ -105,19 +105,19 @@
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/restaurant_remove.png" onclick="R_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/restaurant_remove.svg" onclick="R_removeMakers()">
                 </li>
                 <li class="search_menu_text">飲..の削除</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/hospital_remove.png" onclick="H_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/hospital_remove.svg" onclick="H_removeMakers()">
                 </li>
                 <li class="search_menu_text">病院の削除</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="a" src="/icon/trimming_remove.png" onclick="T_removeMakers()">
+                    <input class="search_button" type="image"  id="a" src="/icon_svg/trimming_remove.svg" onclick="T_removeMakers()">
                 </li>
                 <li class="search_menu_text">ト..の削除</li>
             </div>
@@ -128,7 +128,7 @@
     </div>
     <div class="reset_position">
         <li>
-            <input class="search_button" type="image"  src="/icon/position.png" onclick="initMap()">
+            <input class="search_button" type="image"  src="/icon_svg/position.svg" onclick="initMap()">
         </li>
         <li class="search_menu_text">現在地</li>
     </div>
@@ -175,7 +175,7 @@
                 position: latLng,
                 map: map,
                 icon: {
-                    url: "/icon/me_marker.png",
+                    url: "/icon_svg/me_marker.svg",
                     scaledSize: new google.maps.Size(29.4, 40)
                 }
             }); // 地図の中央に現在地を表示する
@@ -228,22 +228,16 @@
                             url: "/icon/restaurant_marker.png",
                             scaledSize: new google.maps.Size(32, 45)
                         },
-                        label: {
-                        text: json.rest[i].name,
-                        color: "#fff",
-                        fontWeight: 'bold',
-                        fontSize: '14px'
-                        },      
                         url: json.rest[i].url,
                     });
                     restaurantMarkers.push(marker);
                     google.maps.event.addListener(marker, 'click', (function(url){
                         return function(){ location.href = url; };
                     })(json.rest[i].url));
+                    }
                 },
                 error: function(json){
                     console.log("error")
-                }
                 }
             }
             );
@@ -294,7 +288,7 @@
                             results[i].formatted_address,
                     map : map,
                     icon: {
-                        url: "/icon/hospital_marker.png",
+                        url: "/icon_svg/hospital_marker.svg",
                         scaledSize: new google.maps.Size(32, 45)
                     }
                 });
@@ -326,7 +320,7 @@
                             results[i].formatted_address,
                     map : map,
                     icon: {
-                        url: "/icon/trimming_marker.png",
+                        url: "/icon_svg/trimming_marker.svg",
                         scaledSize: new google.maps.Size(32, 45)
                     }
                 });

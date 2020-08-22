@@ -57,7 +57,7 @@ class HowtoUse extends React.Component{
             <div className="manual_position">
                 <div className="manual_marker">
                     <li>
-                        <img src="/icon/manual.png" className="search_button" onClick={() => this.handleClickHowtoUse()} />
+                        <img src="/icon_svg/manual.svg" className="search_button" onClick={() => this.handleClickHowtoUse()} />
                     </li>
                     <li className="how_to_use_acsess"　onClick={() => this.handleClickHowtoUse()}>利用方法</li>
                 </div>
