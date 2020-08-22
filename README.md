@@ -1,4 +1,4 @@
-# NANME
+# NAME
 
 PetMap-App
 
