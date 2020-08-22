@@ -1,29 +1,60 @@
-# README
+# NANME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PetMap-App
 
-Things you may want to cover:
+# DEMO
+ 
+"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+ 
+# Features
+ 
+ ペットの同伴可能な場所(飲食店、動物病院など)を簡単に探すことができる地図サービス
 
-* Ruby version
+ ペットを飼っている飼い主がペットの同伴が可能な場所を地図サービスで探そうとしても
+ 検索がヒットしないことが多々あります
+ 例えば「ペット可のカフェ」と検索しても普通のカフェも検索にヒットして
+ どれが本当にペットの同伴可能なのかわからないことです
+ そのため、確実に同伴可能な場所を示してくれる地図サービスを作成しました
+ 
+# Requirement
 
-* System dependencies
+* react-rails
+ 
+# Installation
+ 
+ ```bash
+ rails webpacker:instal
+ rails webpacker:install:react
+ rails generate react:install
+ ```
+ 
+# Usage
 
-* Configuration
+```
+$ git clone https://github.com/HirotoTamari/petmaps-app.git
 
-* Database creation
+$ cd petmaps-app
 
-* Database initialization
+$ bundle install
 
-* How to run the test suite
+$ rails db:create
 
-* Services (job queues, cache servers, search engines, etc.)
+$ rails db:migrate
 
-* Deployment instructions
+$ rails s
+```
+http://localhost:3000
+ 
+# Note
+ 
+現在地を取得するには位置情報を許可してから使用してください
+ 
+# Author
 
-* ...
-# PetMap_app
-# PetMap_app
-# PetMap_app
-# petmaps-app
-# petmaps-app
+* 名前: 玉利 泰人 / Hiroto Tamari
+* 所属: 和歌山大学大学院　知的モデリング専攻
+* E-mail: henl16101118@gmail.com
+
+# URL
+
+https://petmaps-app.herokuapp.com/
