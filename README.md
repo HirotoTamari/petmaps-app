@@ -5,11 +5,15 @@ PetMap-App
 # DEMO
  
  ### ペット同伴可能なお店の探し方
- ![how_to_use_1](https://user-images.githubusercontent.com/46047753/90959724-c86e6100-e4d7-11ea-8e42-e53f982138a7.gif)
+
+ <img src="https://user-images.githubusercontent.com/46047753/90959724-c86e6100-e4d7-11ea-8e42-e53f982138a7.gif" width="320">
+
  地図画面の上部にあるアイコンをクリックするとそれぞれのお店の位置にマーカを表示します
 
  ### マーカ（ピン）の消し方
- ![how_to_use_2](https://user-images.githubusercontent.com/46047753/90959759-f358b500-e4d7-11ea-813e-7e72265d3bd8.gif)
+ 
+ <img src="https://user-images.githubusercontent.com/46047753/90959759-f358b500-e4d7-11ea-813e-7e72265d3bd8.gif" width="320">
+ 
  地図画面の上部にある「○○の削除」のアイコンをクリックすると○○（ 例えば、病院の削除 ）の位置にマーカを削除します
  
 # Features
