@@ -52,8 +52,9 @@ li{
     /* 利用方法 */
     .how_to_use{
         position: absolute;
-        height: 80vh;
-        margin: -83vh -94vw;
+        width: 98vw;
+        margin: -83vh 0;
+        right: 0;
         background-color: white;
         z-index: 4;
         border-radius: 6px;
@@ -119,6 +120,12 @@ li{
         color: #0079ff;
     }
 
+    .each-shop{
+        z-index: 1000;
+        position: absolute;
+        width: 100vw;
+    }
+
     .how_to_use_mov{
         margin: 5%;
         border: none;
@@ -137,7 +144,7 @@ li{
     }
 
     .start_button{
-        margin: 5% 30%;
+        margin: 30px 30%;
         border: none;
         border-radius: 20px;
         text-align: center;
@@ -372,9 +379,9 @@ li{
     }
     
     .about_mov img{
+        width: auto;
+        height: 100%;
         padding: 0 10%;
-        width: 80%;
-        height: auto;
     }
 
     .mov_contents{
@@ -431,8 +438,7 @@ li{
     }
 
     .about_menu img{
-        height: 100%;
-        padding: 0 10%;
+        width: 100%;
     }
 
     .about_contents{
