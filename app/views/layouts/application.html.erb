@@ -24,11 +24,11 @@
               <%# ページの認識 %>
               <% if current_page?("/users/#{@current_user.id}") or current_page?("/users/#{@current_user.id}/edit")%>
                 <li>
-                  <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/axo1f-degd0.svg"), "/users/#{@current_user.id}" %>
+                  <%= link_to image_tag("/icon/mypage_bottom_on.png"), "/users/#{@current_user.id}" %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/a020y-oyheg.svg"), "/users/#{@current_user.id}" %>
+                  <%= link_to image_tag("/icon/mypage_bottom.png"), "/users/#{@current_user.id}" %>
                 </li>
               <% end%>
                 <li>
@@ -39,11 +39,11 @@
               <%# ページの認識 %>
               <% if current_page?(controller: "maps", action:"map") or current_page?(controller: "maps", action:"index") or current_page?(controller: "maps", action:"about") %>
                 <li>
-                  <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/as8a7-ko918.svg"), "/maps" %>
+                  <%= link_to image_tag("/icon/map_bottom_on.png"), "/maps" %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/atpgg-z05pz.svg"), "/maps" %>
+                  <%= link_to image_tag("/icon/map_bottom.png"), "/maps" %>
                 </li>
               <% end %>
                 <li>
@@ -54,17 +54,17 @@
               <%# ページの認識 %>
               <% if current_page?(controller: "maps", action:"index") or current_page?(controller: "maps", action:"map") or current_page?(controller: "maps", action:"about") or current_page?(controller: "routes", action:"index")%>
                 <li>
-                  <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/as66c-oujy5.svg"), "/posts/index" %>
+                  <%= link_to image_tag("/icon/suggestion_bottom.png"), "/posts/index" %>
                 </li>
               <% else %>
                 <%# ページの認識 %>
                 <% if current_page?(controller: "posts", action:"index") or current_page?(controller: "posts", action:"show") or current_page?(controller: "posts", action:"edit")%>
                   <li>
-                    <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/ajd6x-cnlxi.svg"), "/posts/index" %>
+                    <%= link_to image_tag("/icon/suggestion_bottom_on.png"), "/posts/index" %>
                   </li>
                 <% else %>
                   <li>
-                    <%= link_to image_tag("https://s4.aconvert.com/convert/p3r68-cdx67/as66c-oujy5.svg"), "/posts/index" %>
+                    <%= link_to image_tag("/icon/suggestion_bottom.png"), "/posts/index" %>
                   </li>
                 <% end %>
               <% end %>
