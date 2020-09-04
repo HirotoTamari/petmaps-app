@@ -20,6 +20,7 @@ class HowtoUse extends React.Component{
             modal = (
                 <div className="how_to_use">
                     <h2 className="how_to_use_title">利用方法</h2>
+                    <img src="/icon_svg/remove.svg" className="remove_button" onClick={() => this.handleClickClose()}/>
                     <div className="how_to_use_items">
                         <div className="how_to_use_item">
                             <p className="how_to_use_titles">マーカの表示</p>

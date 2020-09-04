@@ -69,32 +69,57 @@
         </div>
         <div class="users_index_item">
             <div class="container">
-                <div class="my_user_image">
-                    <img src="<%= "/user_images/#{@user.image_name}" %>" class="my_user_image_opp">
-                    <p class="user_name">ユーザ名</p>
-                    <h2><%= @user.name %></h2>              <%# ユーザ名の表示 %>
-                    <p class="user_name">メールアドレス</p>
-                    <p><%= @user.email %></p>               <%# メールアドレスの表示 %>
-                    <p class="user_name">マイルート</p>
-                    <div class="routes">
-                        <div class="routes_menu">           <%# ルート1の表示 %>
-                            <img src="<%= "/route_images/#{@route1.image_name}" %>" class="routes_menu_image"/>
-                            <%= @route1.route_name %>
+                <% if @user.address == nil%>
+                    <div class="my_user_image">
+                        <img src="<%= "/user_images/#{@user.image_name}" %>" class="my_user_image_opp">
+                        <p class="user_name">ユーザ名</p>
+                        <h2><%= @user.name %></h2>              <%# ユーザ名の表示 %>
+                        <p class="user_name">メールアドレス</p>
+                        <p><%= @user.email %></p>               <%# メールアドレスの表示 %>
+                        <p class="user_name">マイルート</p>
+                        <div class="routes">
+                            <div class="routes_menu">           <%# ルート1の表示 %>
+                                <img src="<%= "/route_images/#{@route1.image_name}" %>" class="routes_menu_image"/>
+                                <%= @route1.route_name %>
+                            </div>
+                            <div class="routes_menu">           <%# ルート2の表示 %>
+                                <img src="<%= "/route_images/#{@route2.image_name}" %>" class="routes_menu_image"/>
+                                <%= @route2.route_name %>
+                            </div>
+                            <div class="routes_menu">           <%# ルート3の表示 %>
+                                <img src="<%= "/route_images/#{@route3.image_name}" %>" class="routes_menu_image"/>
+                                <%= @route3.route_name %>
+                            </div>
                         </div>
-                        <div class="routes_menu">           <%# ルート2の表示 %>
-                            <img src="<%= "/route_images/#{@route2.image_name}" %>" class="routes_menu_image"/>
-                            <%= @route2.route_name %>
-                        </div>
-                        <div class="routes_menu">           <%# ルート3の表示 %>
-                            <img src="<%= "/route_images/#{@route3.image_name}" %>" class="routes_menu_image"/>
-                            <%= @route3.route_name %>
-                        </div>
-                    </div>
-                    <% if @current_user.id == @user.id %>
-                        <div class="edit">
-                            <%= link_to("編集", "/users/#{@user.id}/edit") %>
-                        </div>
-                    <% end %>
+                        <% if @current_user.id == @user.id %>
+                            <div class="edit">
+                                <%= link_to("編集", "/users/#{@user.id}/edit") %>
+                            </div>
+                        <% end %>
+                <% else %>
+                    <div class="my_user_image">
+                        <p class="user_name">店舗名、施設名</p>
+                        <h2><%= @user.name %></h2>              <%# ユーザ名の表示 %>
+                        <p class="user_name">メールアドレス</p>
+                        <p><%= @user.email %></p>               <%# メールアドレスの表示 %>
+                        <p class="user_name">住所</p>
+                        <p><%= @user.address %></p>               <%# 住所の表示 %>
+                        <p class="user_name">開業時間</p>
+                        <p><%= @user.open_time %></p>               <%# 開業時間の表示 %>
+                        <p class="user_name">終業時間</p>
+                        <p><%= @user.close_time %></p>               <%# 終業時間の表示 %>
+                        <p class="user_name">店舗、施設のURL</p>
+                        <p><%= @user.url %></p>               <%# URLの表示 %>
+                        <p class="user_name">店舗、施設の特徴、アピールポイント</p>
+                        <p><%= @user.feature %></p>               <%# 店舗、施設の特徴、アピールポイントの表示 %>
+                        <p class="user_name">店舗、施設のタイプ</p>
+                        <p><%= @user.marker_type %>             <%# 店舗、施設のタイプ %>
+                        <% if @current_user.id == @user.id %>
+                            <div class="edit">
+                                <%= link_to("編集", "/users/#{@user.id}/edit") %>
+                            </div>
+                        <% end %>
+                <% end %>
                 </div>
             </div>
         </div>

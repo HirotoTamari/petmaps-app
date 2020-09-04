@@ -85,6 +85,15 @@
         margin: 15px 0 30px 0;
     }
 
+    .textbox_feature{
+        border: none;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        height: 200px;
+        width: 500px;
+        margin: 15px 0 30px 0;
+    }
+
     .textbutton{
         border: none;
         border-radius: 3px;
@@ -146,7 +155,7 @@
     /* マイページ --------------------- */
     .main_user_index{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -192,7 +201,7 @@
     /* サインアップ -------------------- */
     .main_users_new{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -207,7 +216,7 @@
     /* 編集 */
     .main_users_edit{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -381,7 +390,7 @@
     }
 
     .edit{
-        margin-top: 20px;
+        margin: 20px 0 10vh;
         text-align: center;
         border: none;
         border-radius: 3px;
@@ -437,6 +446,14 @@
         border-radius: 3px;
         background-color: #e2e2e2;
         height: 30px;
+        width: 79vw;
+    }
+
+    .textbox_feature{
+        border: none;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        height: 100px;
         width: 79vw;
     }
 

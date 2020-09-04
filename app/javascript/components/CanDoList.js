@@ -22,6 +22,12 @@ class CanDoList extends React.Component{
                 image: "/cando_3_1.png",
                 mov: "/cando_3_1.gif",
                 contents: "より良いサービスを目指すためにあなたの意見を必要としています",
+            },
+            {
+                name: "店舗、施設をペットマップに載せよう",
+                image: "/cando_3_1.png",
+                mov: "/cando_3_1.gif",
+                contents: "店舗、施設のアカウントを登録すれば、ペット同伴可能な店舗、施設の情報ををペットマップに載せることができます",
             }
         ];
 

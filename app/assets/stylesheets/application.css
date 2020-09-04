@@ -55,7 +55,7 @@ h1,h2,p{
         display: flex;
         width: 100vw;
         background-color: #0079ff;
-        box-shadow: 6px 2px 8px #0011ff;
+        box-shadow: 6px 2px 8px #1211fc;
         justify-items: center;
     }
 

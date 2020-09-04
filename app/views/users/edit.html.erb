@@ -86,41 +86,66 @@
                     
                         <%# form内の内容をupdate %>
                         <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-                            <p class="input_title">ユーザー名</p>
-                            <input name="name" value="<%= @user.name %>" class="textbox">       <%# ユーザ名の入力 %>
-                            <p class="input_title">画像</p>
-                            <input name="image" type="file" value="<%= @user.image_name %>" class="imagebox">       <%# 画像を選択 %>
-                            <p class="input_title">メールアドレス</p>
-                            <input name="email" value="<%= @user.email %>" class="textbox">         <%# メールアドレスの入力 %>
-                            <p class="input_title">マイルート</p>
-                            <div class="myroute">
+                            <% if @current_user.address == nil %>
+                                <p class="input_title">ユーザー名</p>
+                                <input name="name" value="<%= @user.name %>" class="textbox">       <%# ユーザ名の入力 %>
+                                <p class="input_title">画像</p>
+                                <input name="image" type="file" value="<%= @user.image_name %>" class="imagebox">       <%# 画像を選択 %>
+                                <p class="input_title">メールアドレス</p>
+                                <input name="email" value="<%= @user.email %>" class="textbox">         <%# メールアドレスの入力 %>
+                                <p class="input_title">マイルート</p>
+                                <div class="myroute">
+                                    <div class="myroute_item">
+                                        <p class="input_title">ルート1</p>
+                                        <select name="route1_id">
+                                            <% @route.each do |route| %>
+                                                <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                    <div class="myroute_item">
+                                        <p class="input_title">ルート2</p>
+                                        <select name="route2_id">
+                                            <% @route.each do |route| %>
+                                                <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                    <div class="myroute_item">
+                                        <p class="input_title">ルート3</p>
+                                        <select name="route3_id">
+                                            <% @route.each do |route| %>
+                                                <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
+                                            <% end %>
+                                        </select>
+                                    </div>
+                                </div>
+                            <% else %>
+                                <p class="input_title">店舗名、施設名</p>                                                           <%# 店舗名、施設名の設定 %>
+                                <input name="name" value="<%= @user.name %>" class="textbox">
+                                <p class="input_title">メールアドレス</p>                                                           <%# メールアドレスの設定 %>
+                                <input name="email" value="<%= @user.email %>" class="textbox">
+                                <p class="input_title">住所</p>                                                                   <%# 住所の設定 %>
+                                <input name="address" value="<%= @user.address %>" class="textbox">
+                                <p class="input_title">開業時間</p>                                                                <%# 開業時間の設定 %>
+                                <input name="open_time" value="<%= @user.open_time %>" class="textbox">
+                                <p class="input_title">終業時間</p>                                                                <%# 終業時間の設定 %>
+                                <input name="close_time" value="<%= @user.close_time %>" class="textbox">
+                                <p class="input_title">お店、施設のURL</p>                                                          <%# お店、施設のの設定 %>
+                                <input name="url" value="<%= @user.url %>" class="textbox">
+                                <p class="input_title">お店、施設の特徴、アピールポイント</p>                                           <%# お店、施設の特徴、アピールポイントの設定 %>
+                                <input name="feature" value="<%= @user.feature %>" class="textbox">
                                 <div class="myroute_item">
-                                    <p class="input_title">ルート1</p>
-                                    <select name="route1_id">
+                                    <p class="input_title">店舗、施設のタイプ</p>
+                                    <select name="marker_type">
                                         <% @route.each do |route| %>
-                                            <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
+                                            <option value=<%= route.function_name %>><%= route.route_name %></option>                <%# タイプの設定 %>
                                         <% end %>
                                     </select>
                                 </div>
-                                <div class="myroute_item">
-                                    <p class="input_title">ルート2</p>
-                                    <select name="route2_id">
-                                        <% @route.each do |route| %>
-                                            <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
-                                        <% end %>
-                                    </select>
-                                </div>
-                                <div class="myroute_item">
-                                    <p class="input_title">ルート3</p>
-                                    <select name="route3_id">
-                                        <% @route.each do |route| %>
-                                            <option value=<%= route.id %>><%= route.route_name %></option>        <%# ルートの選択 %>
-                                        <% end %>
-                                    </select>
-                                </div>
-                            </div>
-                            <input type="submit" value="保存" class="textbutton">       <%# クリックで更新 %>
                             <% end %>
+                            <input type="submit" value="保存" class="textbutton">       <%# クリックで更新 %>
+                        <% end %>
                     </div>
                 </div>
             </div>

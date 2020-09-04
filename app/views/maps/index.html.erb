@@ -43,6 +43,7 @@
         <%# buttonをクリックしたらSearchGoを実行 %>
         <input id="address_button" type="image"  src="/icon_svg/serch_icon.svg" onclick="SearchGo()">
     </div>
+    <div id="maps_users" data-maps_users="<%= @users.to_json %>"></div> 
 
     <%# アイコンをクリックするとroute.function_nameを実行 %>
     <div class="search">
@@ -81,6 +82,13 @@
             <div class="search_menu">
                 <li>
                     <input class="search_button" type="image"  id="a" src="/icon_svg/trimming_remove.svg" onclick="T_removeMakers()">
+                </li>
+                <li class="search_menu_text">ト..の削除</li>
+            </div>
+
+            <div class="search_menu">
+                <li>
+                    <input class="search_button" type="image"  id="aaa" src="/icon_svg/trimming_remove.svg">
                 </li>
                 <li class="search_menu_text">ト..の削除</li>
             </div>
@@ -147,13 +155,19 @@
     <script>
 
     let map;
-    let geocoder;
     let places;
     let marker;
     let restaurantMarkers = [];
     let hospitalMarkers = [];
     let hotelMakers = [];
     let trimmingMarkers = [];
+    let type_date = [];
+    let a = [];
+    let addresses = [];
+
+    const maps_usersHash = $('#maps_users').data('maps_users'); 
+
+    let types = ["Restaurant", "Hospital", "Hotel", "Trimming"];
 
     //地図の生成
     function initMap(){       
@@ -193,6 +207,14 @@
         const Hospital = document.getElementById("Hospital");
         Hospital.addEventListener("click", function(){
             map.addListener(Hospitals());
+            let geocoder = new google.maps.Geocoder();
+            map.addListener(type_clicks(geocoder, map));
+        });
+
+        const aaaa = document.getElementById("aaa");
+        aaaa.addEventListener("click", function(){
+            let geocoder = new google.maps.Geocoder();
+            type_clicks(geocoder, map);
         });
 
         // 動物病院の検索
@@ -201,7 +223,46 @@
             map.addListener(Trimmings());
         });
 
+        
+
         map.panTo(map.getCenter());
+    }
+
+    function type_clicks(geocoder, resultsMap){
+        for(var i = 0; i < maps_usersHash.length; i++){
+            for(var j = 0; j < types.length; j++){
+                if(maps_usersHash[i].marker_type == types[j]){
+                    let name = maps_usersHash[i].name;
+                    let opentime = maps_usersHash[i].open_time; 
+                    let closetime = maps_usersHash[i].close_time; 
+                    let markeraddress = maps_usersHash[i].address; 
+                    let phonenumber = maps_usersHash[i].phone_number; 
+                    let url = maps_usersHash[i].url; 
+                    let feature = maps_usersHash[i].feature; 
+                    geocoder.geocode({ address: maps_usersHash[i].address}, (results, status) => {
+                        for(var k = 0; k < results.length; k++){
+                            if (status === "OK") {
+                                console.log(map.getCenter());
+                            resultsMap.setCenter(results[k].geometry.location);
+                            marker = createMarker({
+                                map: map,
+                                text : name + "<br>" +
+                                        opentime + "~" + closetime + "<br>" +
+                                        markeraddress + "<br>" +
+                                        phonenumber + "<br>" +
+                                        url + "<br>" +
+                                        feature,
+                                position: results[k].geometry.location
+                            });
+                            hospitalMarkers.push(marker);
+                            } else {
+                            alert("Geocode was not successful for the following reason: " + status);
+                            }
+                        }
+                    });
+                }
+            }
+        }
     }
 
     function Restaurants(){
@@ -282,7 +343,7 @@
         function hospital_result_search(results, status) {
             var bounds = new google.maps.LatLngBounds();
             for(var i = 0; i < results.length; i++){
-                marker = createMarker({
+                    marker = createMarker({
                     position : results[i].geometry.location,
                     text : results[i].name + "<br>" +
                             results[i].formatted_address,
@@ -291,9 +352,9 @@
                         url: "/icon_svg/hospital_marker.svg",
                         scaledSize: new google.maps.Size(32, 45)
                     }
-                });
-                hospitalMarkers.push(marker);
-                bounds.extend(results[i].geometry.location);
+                    });
+                    hospitalMarkers.push(marker);
+                    bounds.extend(results[i].geometry.location);
             }
             map.fitBounds(bounds);
 

@@ -14,14 +14,16 @@ Rails.application.routes.draw do
   post "posts/:id/destroy" => "posts#destroy"   #削除
 
   #マイページ
-  post "users/:id/update" => "users#update"     #編集の実行
-  get "users/:id/edit" => "users#edit"          #アカウント編集
-  post "users/create" => "users#create"         #新規登録の実行
-  get "signup" => "users#new"                   #新規登録
+  post "users/:id/update" => "users#update"                       #編集の実行
+  get "users/:id/edit" => "users#edit"                            #アカウント編集
+  post "users/create" => "users#create"                           #新規登録の実行
+  get "signup" => "users#new"                                     #新規登録
+  post "users/owner_create" => "users#owner_create"               #新規登録の実行
+  get "owner_signup" => "users#owner_new"                         #オーナー側の新規登録
   get "users/forget_password" => "users#forget_password"          #パスワード再設定のためのメール送信フォーム
-  get "users/comfirm_mail" => "users#confirm_mail"                  #メール確認の指示
+  get "users/comfirm_mail" => "users#confirm_mail"                #メール確認の指示
   get "users/reregister_password" => "users#reregister_password"  #パスワード再設定
-  get "users/:id" => "users#index"            #アカウント詳細
+  get "users/:id" => "users#index"                                #アカウント詳細
 
   #マップ
   root to: 'maps#index'

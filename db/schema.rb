@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_044929) do
+ActiveRecord::Schema.define(version: 2020_08_23_053937) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_08_11_044929) do
     t.string "password_digest"
     t.string "uid"
     t.string "provider"
+    t.string "owner_name"
+    t.string "address"
+    t.string "open_time"
+    t.string "close_time"
+    t.string "url"
+    t.string "feature"
+    t.string "owner_images"
+    t.string "phone_number"
+    t.string "marker_type"
   end
 
 end
