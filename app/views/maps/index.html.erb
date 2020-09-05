@@ -131,6 +131,9 @@
             </div>
         <% end %>
     </div>
+    <div>
+        <%= react_component('HowtoUse') %>
+    </div>
     <div class="reset_position">
         <li>
             <input class="search_button" type="image"  src="/icon_svg/position.svg" onclick="initMap()">
@@ -175,6 +178,22 @@
             center: initPos,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+
+        //現在地の取得
+        let a = navigator.geolocation.getCurrentPosition(get_pos);
+        function get_pos(position) {
+            let lat = position.coords.latitude; // 緯度
+            let lng = position.coords.longitude; // 経度
+            let latLng = new google.maps.LatLng(lat, lng);
+            var marker = new google.maps.Marker({ // 現在地の位置設定とアイコンのカスタマイズ
+                position: latLng,
+                map: map,
+                icon: {
+                    url: "/icon_svg/me_marker.svg",
+                    scaledSize: new google.maps.Size(29.4, 40)
+                }
+            }); // 地図の中央に現在地を表示する
+        }
         
         Hospitals();
 
