@@ -21,7 +21,7 @@ class CanDo extends React.Component{
                 <div className='modal' onClick={()=> this.handleClickClose()}>
                     <div className='modal_inner'>
                         <div className="modal_mov">
-                        <video src={this.props.mov} autoplay loop muted playsinline></video>
+                        <img src={this.props.mov} />
                         </div>
                         <div className="modal_title">
                             <h2>{this.props.name}</h2>

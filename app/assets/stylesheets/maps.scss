@@ -132,7 +132,7 @@ li{
         overflow: hidden;
     }
 
-    .how_to_use_mov video{
+    .how_to_use_mov img{
         width: 100%;
         border-radius: 4px;
     }
@@ -380,6 +380,11 @@ li{
     .mov_option{
         width: 50vw;
         height: 40vw;
+    }
+
+    .mov_option img{
+        max-width: 90%;
+        padding: 0 5%;
     }
     
     .about_mov video{
@@ -636,7 +641,7 @@ li{
         overflow: hidden;
     }
 
-    .how_to_use_mov video{
+    .how_to_use_mov img{
         width: 100%;
         border-radius: 4px;
     }
@@ -1041,7 +1046,7 @@ li{
         z-index: 2;
     }
 
-    .modal_mov video{
+    .modal_mov img{
         margin: 5%;
         width: 90%;
     }
