@@ -88,26 +88,26 @@
 
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="aaa" src="/icon_svg/trimming_remove.svg">
+                    <input class="search_button" type="image" id="aaa" src="/icon_svg/trimming_remove.svg">
                 </li>
                 <li class="search_menu_text">ト..の削除</li>
             </div>
         <% else %>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="Restaurant" src="/icon_svg/restaurant.svg">
+                    <input class="search_button" type="image" id="Restaurant" src="/icon_svg/restaurant.svg">
                 </li>
                 <li class="search_menu_text">飲食店</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="Hospital" src="/icon_svg/hospital.svg">
+                    <input class="search_button" type="image" id="Hospital" src="/icon_svg/hospital.svg">
                 </li>
                 <li class="search_menu_text">病院</li>
             </div>
             <div class="search_menu">
                 <li>
-                    <input class="search_button" type="image"  id="Trimming" src="/icon_svg/trimming.svg">
+                    <input class="search_button" type="image" id="Trimming" src="/icon_svg/trimming.svg">
                 </li>
                 <li class="search_menu_text">トリミング</li>
             </div>
@@ -211,19 +211,17 @@
             map.addListener(type_clicks(geocoder, map));
         });
 
-        const aaaa = document.getElementById("aaa");
-        aaaa.addEventListener("click", function(){
-            let geocoder = new google.maps.Geocoder();
-            type_clicks(geocoder, map);
-        });
-
         // 動物病院の検索
         const Trimming = document.getElementById("Trimming");
         Trimming.addEventListener("click", function(){
             map.addListener(Trimmings());
         });
 
-        
+        const aaaa = document.getElementById("aaa");
+        aaaa.addEventListener("click", function(){
+            let geocoder = new google.maps.Geocoder();
+            type_clicks(geocoder, map);
+        });
 
         map.panTo(map.getCenter());
     }
