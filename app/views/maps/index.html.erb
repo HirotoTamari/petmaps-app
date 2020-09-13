@@ -85,13 +85,14 @@
                 </li>
                 <li class="search_menu_text">ト..の削除</li>
             </div>
-
-            <div class="search_menu">
-                <li>
-                    <input class="search_button" type="image" id="aaa" src="/icon_svg/trimming_remove.svg">
-                </li>
-                <li class="search_menu_text">ト..の削除</li>
-            </div>
+            <% if @current_user.name == "test" %>
+                <div class="search_menu">
+                    <li>
+                        <input class="search_button" type="image" id="aaa" src="/icon_svg/trimming_remove.svg">
+                    </li>
+                    <li class="search_menu_text">登録店</li>
+                </div>
+            <% end %>
         <% else %>
             <div class="search_menu">
                 <li>
@@ -167,7 +168,12 @@
 
     const maps_usersHash = $('#maps_users').data('maps_users'); 
 
-    let types = ["Restaurant", "Hospital", "Hotel", "Trimming"];
+    let types = ["Restaurant", "Hospital", "Trimming"];
+    let typeimages = [
+        "/icon_svg/restaurant_marker.svg",
+        "/icon_svg/hospital_marker.svg",
+        "/icon_svg/trimming_marker.svg"
+    ]
 
     //地図の生成
     function initMap(){       
@@ -237,12 +243,13 @@
                     let phonenumber = maps_usersHash[i].phone_number; 
                     let url = maps_usersHash[i].url; 
                     let feature = maps_usersHash[i].feature; 
+                    let image = typeimages[j];
                     geocoder.geocode({ address: maps_usersHash[i].address}, (results, status) => {
                         for(var k = 0; k < results.length; k++){
                             if (status === "OK") {
                                 console.log(map.getCenter());
-                            resultsMap.setCenter(results[k].geometry.location);
-                            marker = createMarker({
+                                resultsMap.setCenter(results[k].geometry.location);
+                                marker = createMarker({
                                 map: map,
                                 text : name + "<br>" +
                                         opentime + "~" + closetime + "<br>" +
@@ -251,12 +258,12 @@
                                         url + "<br>" +
                                         feature,
                                 icon: {
-                                    url: "/icon/restaurant_marker.png",
+                                    url: image,
                                     scaledSize: new google.maps.Size(32, 45)
                                 },
                                 position: results[k].geometry.location
-                            });
-                            hospitalMarkers.push(marker);
+                                });
+                                hospitalMarkers.push(marker);
                             } else {
                             alert("Geocode was not successful for the following reason: " + status);
                             }
