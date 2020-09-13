@@ -173,7 +173,12 @@
         "/icon_svg/restaurant_marker.svg",
         "/icon_svg/hospital_marker.svg",
         "/icon_svg/trimming_marker.svg"
-    ]
+    ];
+    let markers = [
+        restaurantMarkers,
+        hospitalMarkers,
+        trimmingMarkers
+    ];
 
     //地図の生成
     function initMap(){       
@@ -244,6 +249,7 @@
                     let url = maps_usersHash[i].url; 
                     let feature = maps_usersHash[i].feature; 
                     let image = typeimages[j];
+                    let marker_set = markers[j];
                     geocoder.geocode({ address: maps_usersHash[i].address}, (results, status) => {
                         for(var k = 0; k < results.length; k++){
                             if (status === "OK") {
@@ -263,7 +269,7 @@
                                 },
                                 position: results[k].geometry.location
                                 });
-                                hospitalMarkers.push(marker);
+                                marker_set.push(marker);
                             } else {
                             alert("Geocode was not successful for the following reason: " + status);
                             }
