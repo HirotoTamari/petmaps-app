@@ -289,6 +289,8 @@ li{
         display: flex;
         flex-direction: column;
         width: 60px;
+        margin: 0;
+        padding-inline-start: 0;
         text-align: center;
     }
 
@@ -798,13 +800,17 @@ li{
         z-index: 1;
         padding-top: 70px;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .search_menu{
         display: flex;
         flex-direction: column;
         margin-left: 10px;
-        width: 50px;
+        width: 60px;
+        height: 80px;
+        margin: 0;
+        padding-inline-start: 0;
         text-align: center;
     }
 
