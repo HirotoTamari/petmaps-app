@@ -218,8 +218,6 @@
         const Hospital = document.getElementById("Hospital");
         Hospital.addEventListener("click", function(){
             map.addListener(Hospitals());
-            let geocoder = new google.maps.Geocoder();
-            map.addListener(type_clicks(geocoder, map));
         });
 
         // 動物病院の検索
