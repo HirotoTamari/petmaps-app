@@ -159,6 +159,11 @@ li{
         opacity: 1.0;
         color: white;
         background-color: #0079ff;
+        cursor: pointer;
+    }
+
+    .start_button:hover{
+        opacity: 0.7;
     }
     
     /* ハンバーガーメニュー */
@@ -331,6 +336,12 @@ li{
         height: 40px;
         border: none;
         outline: none;
+    }
+
+    .search_button:hover{
+        height: 44px;
+        padding: -2px 0 0 -2px;
+        opacity: 0.8;
     }
 
     /* ペットマップとは */
@@ -673,6 +684,7 @@ li{
         opacity: 1.0;
         color: white;
         background-color: #0079ff;
+        cursor: pointer;
     }
 
     /* 検索バー */

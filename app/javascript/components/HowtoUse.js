@@ -3,7 +3,12 @@ import React from 'react';
 class HowtoUse extends React.Component{
     constructor(props) {
         super(props);
-        this.state = {isModalOpen: true};
+        if(sessionStorage.getItem('acs') === null) {
+            sessionStorage.setItem('acs', 'on');
+            this.state = {isModalOpen: true};
+        } else {
+            this.state = {isModalOpen: false};
+        }
     }
     
     handleClickHowtoUse() {
