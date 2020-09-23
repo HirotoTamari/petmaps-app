@@ -7,7 +7,7 @@
 }
 
 .main_users{
-    background-color: rgb(212, 212, 212);
+    background-color: #0079ff;
     display: flex;
 }
 
@@ -27,7 +27,6 @@
         height: 100vh;
         position: fixed;
         background-color: white;
-        box-shadow: 0 2px 6px #888;
     }
 
     .maps_menu li{
@@ -56,7 +55,8 @@
         padding-left: 30px;
         font-size: 25px;
         margin: 20px 20px 20px 10vw ;
-        opacity: 0.7;
+        opacity: 1.0;
+        color: white;
     }
 
     .user_name{
@@ -70,7 +70,8 @@
         margin: 20px 0 20px 10vw;
         padding-left: 30px;
         font-size: 15px;
-        opacity: 0.7;
+        opacity: 1.0;
+        color: white;
     }
 
     /* input -------------------------*/
@@ -81,6 +82,15 @@
         background-color: #e2e2e2;
         height: 30px;
         width: 200px;
+        margin: 15px 0 30px 0;
+    }
+
+    .textbox_feature{
+        border: none;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        height: 200px;
+        width: 500px;
         margin: 15px 0 30px 0;
     }
 
@@ -145,7 +155,7 @@
     /* マイページ --------------------- */
     .main_user_index{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -163,7 +173,6 @@
         padding: 20px 0 20px 30px;
         background-color: white;
         overflow: hidden;
-        box-shadow: 0 2px 6px #888;
     }
 
     .my_user_image{
@@ -192,7 +201,7 @@
     /* サインアップ -------------------- */
     .main_users_new{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -207,7 +216,7 @@
     /* 編集 */
     .main_users_edit{
         width: 80vw;
-        height: 100vh;
+        min-height: 100vh;
         margin-left: 20vw;
         padding-left: 20px;
     }
@@ -381,7 +390,7 @@
     }
 
     .edit{
-        margin-top: 20px;
+        margin: 20px 0 10vh;
         text-align: center;
         border: none;
         border-radius: 3px;
@@ -437,6 +446,14 @@
         border-radius: 3px;
         background-color: #e2e2e2;
         height: 30px;
+        width: 79vw;
+    }
+
+    .textbox_feature{
+        border: none;
+        border-radius: 3px;
+        background-color: #e2e2e2;
+        height: 100px;
         width: 79vw;
     }
 

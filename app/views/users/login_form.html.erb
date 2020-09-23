@@ -2,12 +2,12 @@
     <%# ハンバーガーメニュー %>
     <div class="hamburger">
         <input id="hamburger_menu" type="checkbox" />
-        <label for="hamburger_menu" class="open"><img class="hamburger_icon" src="/icon/hamburger_icon2.png"></label>
+        <label for="hamburger_menu" class="open"><img class="hamburger_icon" src="/icon_svg/hamburger_icon2.svg"></label>
 
         <%# ハンバーガーメニューの中身 %>
         <aside>
             <div class="hamburger_nav">
-                <label for="hamburger_menu" class="close"><img class="hamburger_icon" src="/icon/hamburger_close_icon.png"></label>
+                <label for="hamburger_menu" class="close"><img class="hamburger_icon" src="/icon_svg/hamburger_close_icon.svg"></label>
 
                 <nav class="hamburger_menu">
                     <h2 class="menu_title">メニュー</h2>
@@ -47,15 +47,15 @@
     <div class="maps_menu">
         <h2 class="menu_title">メニュー</h2>
         <li>
-            <%= link_to image_tag("/icon/mypage.png"), "/login" %>
+            <%= link_to image_tag("/icon_svg/mypage.svg"), "/login" %>
             <%= link_to( "ログイン", "/login") %>
         </li>
         <li>
-            <%= link_to image_tag("/icon/map.png"), "/maps" %>
+            <%= link_to image_tag("/icon_svg/map.svg"), "/maps" %>
             <%= link_to( "ペットマップ", "/maps") %>
         </li>
         <li>
-            <%= link_to image_tag("/icon/map.png"), "/maps/about" %>
+            <%= link_to image_tag("/icon_svg/map.svg"), "/maps/about" %>
             <%= link_to( "ペットマップとは", "/maps/about") %>
         </li>
     </div>
@@ -82,17 +82,23 @@
                         <input type="password" name="password" value="<%= @password %>" class="textbox">
                         <input type="submit" value="ログイン" class="textbutton">
                         <% end %>
-                        <%# ソーシャルログイン %>
+
+                        <!-- <%# ソーシャルログイン %>
                         <div class="social_login_form">
                             <%= link_to( "Facebookでログイン", "/user_facebook_omniauth_authorize_path" ) %>
                         </div>
                         <div class="social_login_form">
                             <%= link_to( "Googleでログイン", "/user_google_oauth2_omniauth_authorize_path" ) %>
-                        </div>
+                        </div> -->
+                        
                         <%# アカウント作成の案内 %>
                         <div class="signup_form">
                             <p class="input_title">アカウントをお持ちでない方は</p>
                             <%= link_to( "こちら", "/signup" ) %>
+                        </div>
+                        <div class="signup_form">
+                            <p class="input_title">店舗、施設をマップに載せたい方は</p>
+                            <%= link_to( "こちら", "/owner_signup" ) %>
                         </div>
                     </div>
                 </div>

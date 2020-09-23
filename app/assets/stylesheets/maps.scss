@@ -24,6 +24,14 @@ li{
 /* -------------------------------------- Web用のCSS ------------------------------------*/
 
 @media screen and (min-width: 671px){
+    /* Google Mapsの設定*/
+    .gm-svpc{
+        display: none !important;
+    }
+
+    .gmnoprint{
+        display: none !important;
+    }
 
     /* 検索バー */
     .serch_box{
@@ -39,6 +47,123 @@ li{
         margin: 10px;
 
         z-index: 2;
+    }
+
+    /* 利用方法 */
+    .how_to_use{
+        position: absolute;
+        width: 98vw;
+        margin: -83vh 0;
+        right: 0;
+        background-color: white;
+        z-index: 4;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0,0,0,.3);
+    }
+
+    .how_to_use_title{
+        text-align: center;
+        padding: 20px;
+        opacity: 1.0;
+        font-size: 27px;
+        color: #0079ff;
+    }
+
+    .how_to_use_items{
+        display: flex;
+    }
+
+    .how_to_use_item{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 33vw;
+    }
+
+    .manual_position{
+        margin: 0 1vw 1vh 0;
+        position: absolute;
+        height: 8vh;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        z-index: 3;
+    }
+
+    .manual_marker{
+        text-align: center;
+    }
+
+    .how_to_use_acsess{
+        text-align: center;
+        line-height: 0px;
+        font-size: 5px;
+        text-shadow    : 
+            2px  2px 1px #ffffff,
+            -2px  2px 1px #ffffff,
+            2px -2px 1px #ffffff,
+            -2px -2px 1px #ffffff,
+            2px  0px 1px #ffffff,
+            0px  2px 1px #ffffff,
+            -2px  0px 1px #ffffff,
+            0px -2px 1px #ffffff;
+    }
+
+    .how_to_use_titles{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        font-weight: 700;
+        margin: 4% 2% 2% 5%;
+        opacity: 1.0;
+        font-size: 20px;
+        color: #0079ff;
+    }
+
+    .each-shop{
+        z-index: 1000;
+        position: absolute;
+        width: 100vw;
+    }
+
+    .how_to_use_mov{
+        margin: 5%;
+        border: none;
+        overflow: hidden;
+    }
+
+    .how_to_use_mov img{
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .how_to_use_content{
+        margin: 5% 5% 15% 5%;
+        font-size: 13px;
+        color: #0079ff;
+    }
+
+    .remove_button{
+        display: none !important;
+    }
+
+    .start_button{
+        margin: 30px 30%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        width: 40%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        opacity: 1.0;
+        color: white;
+        background-color: #0079ff;
+        cursor: pointer;
+    }
+
+    .start_button:hover{
+        opacity: 0.7;
     }
     
     /* ハンバーガーメニュー */
@@ -169,6 +294,8 @@ li{
         display: flex;
         flex-direction: column;
         width: 60px;
+        margin: 0;
+        padding-inline-start: 0;
         text-align: center;
     }
 
@@ -188,10 +315,10 @@ li{
     }
 
     .reset_position{
-        margin: 0 6px 25vh 0;
+        margin: 0 1vw 1vh 0;
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 70px;
         display: flex;
         flex-direction: column;
         width: 50px;
@@ -211,18 +338,77 @@ li{
         outline: none;
     }
 
+    .search_button:hover{
+        height: 44px;
+        padding: -2px 0 0 -2px;
+        opacity: 0.8;
+    }
+
     /* ペットマップとは */
 
     .about_all{
         background-color: white;
     }
 
-    .about_menu_contens{
-        font-family: Roboto,sans-serif;
-        margin: 10vw;
+    .about_menu_title_res{
+        display: none !important;
+    }
+
+    .about_menu_title_web{
+        display: block !important;
+        font-family: "Google Sans", "Arial", "sans-serif";
+        margin: 10vw 10vw 20px 10vw;
+        opacity: 1.0;
+        color: #0079ff;
+    }
+
+    .about_menu_contents{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        margin: 30px 10vw;
         width: 80vw;
         font-size: 17px;
         color: #0079ff;
+    }
+
+    .about_contents_mov{
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 10vw;
+    }
+
+    .mov_contents_title{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        padding: 15vw 10% 10% 10%;
+        opacity: 1.0;
+        color: white;
+    }
+
+    .mov_contents_contents{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        padding: 0 10%;
+        opacity: 1.0;
+        color: white;
+    }
+
+    .mov_option{
+        width: 50vw;
+        height: 40vw;
+    }
+
+    .mov_option img{
+        max-width: 90%;
+        padding: 0 5%;
+    }
+    
+    .about_mov video{
+        width: auto;
+        height: 100%;
+        padding: 0 10%;
+    }
+
+    .mov_contents{
+        width: 50vw;
+        height: 40vw;
     }
 
     .about_aside{
@@ -280,19 +466,21 @@ li{
     .about_contents{
         margin-top: -6px;
         padding-top: 1vw;
-        background: -moz-linear-gradient(top, #0011ff, #0044ff);
-        background: -webkit-linear-gradient(top, #0011ff, #0044ff);
-        background: linear-gradient(to bottom, #0011ff, #0044ff);
+        background: #1211fc;
     }
 
     .about_contents_title{
         font-family: "Google Sans", "Arial", "sans-serif";
-        padding-left: 4vw;
+        padding: 20px 10% 40px 10%;
         color:white;
         opacity: 1.0;
     }
 
     .about_contents_smart_nav{
+        display: none !important;
+    }
+
+    .about_contents_smart_nav_1{
         display: none !important;
     }
 
@@ -371,9 +559,9 @@ li{
         border: none;
         border-radius: 21px;
         color: white;
-        background: -moz-linear-gradient(top, #0011ff, #0044ff);
-        background: -webkit-linear-gradient(top, #0011ff, #0044ff);
-        background: linear-gradient(to bottom, #0011ff, #0044ff);
+        background: -moz-linear-gradient(top, #1211fc, #0044ff);
+        background: -webkit-linear-gradient(top, #1211fc, #0044ff);
+        background: linear-gradient(to bottom, #1211fc, #0044ff);
         width: 20vw;
         height: 40px;
         line-height: 40px;
@@ -401,6 +589,102 @@ li{
 
     .gmnoprint{
         display: none !important;
+    }
+
+    /* 利用方法 */
+    .how_to_use{
+        position: absolute;
+        width: 101vw;
+        margin: -72vh -87vw;
+        background-color: white;
+        z-index: 4;
+    }
+
+    .how_to_use_title{
+        text-align: center;
+        padding: 20px;
+        opacity: 1.0;
+        font-size: 18px;
+        color: #0079ff;
+    }
+
+    .manual_position{
+        margin: 0 1vw 1vh 0;
+        position: absolute;
+        height: 7vh;
+        right: 0;
+        bottom: 20vh;
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        z-index: 3;
+    }
+
+    .manual_marker{
+        text-align: center;
+    }
+
+    .how_to_use_acsess{
+        text-align: center;
+        line-height: 0px;
+        font-size: 10px;
+        text-shadow    : 
+            2px  2px 1px #ffffff,
+            -2px  2px 1px #ffffff,
+            2px -2px 1px #ffffff,
+            -2px -2px 1px #ffffff,
+            2px  0px 1px #ffffff,
+            0px  2px 1px #ffffff,
+            -2px  0px 1px #ffffff,
+            0px -2px 1px #ffffff;
+    }
+
+    .how_to_use_titles{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        font-weight: 700;
+        margin: 9% 5% 5% 5%;
+        opacity: 1.0;
+        font-size: 15px;
+        color: #0079ff;
+    }
+
+    .how_to_use_mov{
+        margin: 5%;
+        border: none;
+        overflow: hidden;
+    }
+
+    .how_to_use_mov img{
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    .how_to_use_content{
+        margin: 5% 5% 15% 5%;
+        font-size: 13px;
+        color: #0079ff;
+    }
+
+    .remove_button{
+        position: fixed;
+        width: 11vw;
+        right: 0;
+        padding: 6% 5%;
+    }
+
+    .start_button{
+        margin: 5% 30%;
+        border: none;
+        border-radius: 20px;
+        text-align: center;
+        width: 40%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        opacity: 1.0;
+        color: white;
+        background-color: #0079ff;
+        cursor: pointer;
     }
 
     /* 検索バー */
@@ -528,13 +812,17 @@ li{
         z-index: 1;
         padding-top: 70px;
         display: flex;
+        flex-wrap: wrap;
     }
 
     .search_menu{
         display: flex;
         flex-direction: column;
         margin-left: 10px;
-        width: 50px;
+        width: 60px;
+        height: 80px;
+        margin: 0;
+        padding-inline-start: 0;
         text-align: center;
     }
 
@@ -554,10 +842,10 @@ li{
     }
 
     .reset_position{
-        margin: 0 10px 10px 0;
+        margin: 0 1vw 1vh 0;
         position: absolute;
         right: 0;
-        bottom: 0;
+        bottom: 10vh;
         display: flex;
         flex-direction: column;
         width: 50px;
@@ -573,8 +861,8 @@ li{
     }
 
     .search_button{
-        width: 50px;
-        height: 50px;
+        width: 13vw;
+        height: auto;
         border: none;
         outline: none;
     }
@@ -645,12 +933,29 @@ li{
         background-color: white;
     }
 
-    .about_menu_contens{
-        font-family: Roboto,sans-serif;
-        margin: 15vw;
-        width: 70vw;
-        font-size: 13px;
+    .about_menu_title_web{
+        display: none !important;
+    }
+
+    .about_menu_title_res{
+        display: block !important;
+        font-family: "Google Sans", "Arial", "sans-serif";
+        margin: 60px 10vw 0 10vw;
+        font-size: 16px;
+        opacity: 1.0;
         color: #0079ff;
+    }
+
+    .about_menu_contents{
+        font-family: "Google Sans", "Arial", "sans-serif";
+        margin: 20px 10vw;
+        width: 80vw;
+        font-size: 12px;
+        color: #0079ff;
+    }
+
+    .about_contents_mov{
+        display: none !important;
     }
 
     /* about_menu */
@@ -671,11 +976,11 @@ li{
     }
 
     .about_contents{
-        margin: -6px 0 50px 0;
+        margin: -7px 0 50px 0;
         padding-top: 1vw;
-        background: -moz-linear-gradient(top, #0011ff, #0044ff);
-        background: -webkit-linear-gradient(top, #0011ff, #0044ff);
-        background: linear-gradient(to bottom, #0011ff, #0044ff);
+        background: -moz-linear-gradient(top, #1211fc, #0044ff);
+        background: -webkit-linear-gradient(top, #1211fc, #0044ff);
+        background: linear-gradient(to bottom, #1211fc, #0044ff);
     }
 
     .about_contents_title{
@@ -714,7 +1019,7 @@ li{
         scroll-snap-align: start;
     }
 
-    .about_contents_nav_item img{
+    .nav_item_img img{
         width: 100%;
         height: 100%;
     }
@@ -733,6 +1038,95 @@ li{
     .nav_item_title a{
         font-size: 14px;
         color: white;
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .modal_inner {
+        position: absolute;
+        top: 8%;
+        right: 0;
+        left: 0;
+        bottom: 8%;
+        width: 90vw;
+        padding-bottom: 60px;
+        margin: auto;
+        background-color: #1211fc;
+        border-radius: 6px;
+        z-index: 2;
+    }
+
+    .modal_mov img{
+        margin: 5%;
+        width: 90%;
+    }
+
+    .modal_title h2{
+        opacity: 1.0;
+        color: white;
+        font-size: 15px;
+        padding: 5%;
+    }
+
+    .modal_content p{
+        opacity: 1.0;
+        color: white;
+        font-size: 13px;
+        padding: 5%;
+    }
+    
+    .about_contents_nav_items_1{
+        display: flex;
+    }
+
+    .about_contents_smart_nav_1{
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vw);
+        scroll-snap-type: x mandatory;
+        display: flex;
+        overflow-x: scroll;
+        scroll-padding: 10vw;
+    }
+
+    .about_contents_nav_item_1{
+        position: relative;
+        width: 80vw;
+        height: 80vw;
+        margin: 30px 10vw;
+        background-color: white;
+        border-radius: 15px;
+        overflow: hidden;
+        scroll-snap-align: start;
+    }
+
+    .nav_item_img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .nav_item_title_1{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #00258a;
+    }
+
+    .item_padding_1{
+        padding: 16px;
+        font-size: 14px;
+        color: white;
+    }
+
+    .nav_array{
+        display: flex;
     }
 
     .recommend_login_title{
@@ -754,9 +1148,9 @@ li{
         border: none;
         border-radius: 21px;
         color: white;
-        background: -moz-linear-gradient(top, #0011ff, #0044ff);
-        background: -webkit-linear-gradient(top, #0011ff, #0044ff);
-        background: linear-gradient(to bottom, #0011ff, #0044ff);
+        background: -moz-linear-gradient(top, #1211fc, #0044ff);
+        background: -webkit-linear-gradient(top, #1211fc, #0044ff);
+        background: linear-gradient(to bottom, #1211fc, #0044ff);
         width: 80vw;
         height: 40px;
         line-height: 40px;

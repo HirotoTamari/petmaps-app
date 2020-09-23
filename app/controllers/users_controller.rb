@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   def create
     @route1 = Route.find_by(id: 1)
     @route2 = Route.find_by(id: 2)
-    @route3 = Route.find_by(id: 3)
+    @route3 = Route.find_by(id: 4)
+    @route = Route.find_by(id:params[:id])
 
     @user = User.new(
       name: params[:name],
@@ -32,29 +33,69 @@ class UsersController < ApplicationController
       render("users/new")
     end
   end
+
+  def owner_new
+    @route = Route.all
+    @user = User.new
+  end
+
+  def owner_create
+    @route = Route.find_by(id:params[:id])
+    @route1 = Route.find_by(id: 1)
+    @route2 = Route.find_by(id: 2)
+    @route3 = Route.find_by(id: 4)
+
+    @user = User.new(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password],
+      address: params[:address],
+      phone_number: params[:phone_number],
+      open_time: params[:open_time],
+      close_time: params[:close_time],
+      url: params[:url],
+      feature: params[:feature],
+      marker_type: params[:marker_type],
+      route1_id: @route1.id,
+      route2_id: @route2.id,
+      route3_id: @route3.id
+    )
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/owner_new")
+    end
+  end
   
   def edit
     @user = User.find_by(id: params[:id])
     @route = Route.all
     @route1 = Route.find_by(id: 1)
     @route2 = Route.find_by(id: 2)
-    @route3 = Route.find_by(id: 3)
+    @route3 = Route.find_by(id: 4)
   end
   
   def update
-    @user = User.find_by(id: params[:id])
-    @route = Route.find_by(id:params[:id])
-    @user.name = params[:name]
-    @user.email = params[:email]
-    @user.route1_id = params[:route1_id]
-    @user.route2_id = params[:route2_id]
-    @user.route3_id = params[:route3_id]
+      @user = User.find_by(id: params[:id])
+      @user.name = params[:name]
+      @user.email = params[:email]
+      @user.address = params[:address]
+      @user.open_time = params[:open_time]
+      @user.close_time = params[:close_time]
+      @user.url = params[:url]
+      @user.feature = params[:feature]
+      @route = Route.find_by(id:params[:id])
+      @user.route1_id = params[:route1_id]
+      @user.route2_id = params[:route2_id]
+      @user.route3_id = params[:route3_id]
+      if params[:image]
+        @user.image_name = "#{@user.id}.png"
+        image = params[:image]
+        File.binwrite("public/user_images/#{@user.image_name}", image.read)
+      end
     
-    if params[:image]
-      @user.image_name = "#{@user.id}.png"
-      image = params[:image]
-      File.binwrite("public/user_images/#{@user.image_name}", image.read)
-    end
+      
     
     if @user.save
       flash[:notice] = "ユーザー情報を編集しました"

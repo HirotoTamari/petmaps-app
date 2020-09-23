@@ -1,10 +1,10 @@
 <%# ハンバーガーメニュー %>
 <input id="hamburger_menu" type="checkbox" />
-<label for="hamburger_menu" class="open"><img class="about_hamburger_icon" src="/icon/hamburger_icon.png"></label>
+<label for="hamburger_menu" class="open"><img class="about_hamburger_icon" src="/icon_svg/hamburger_icon.svg"></label>
 
 <%# ハンバーガーメニューの中身 %>
 <aside class="about_aside">
-    <label for="hamburger_menu" class="close"><img class="about_hamburger_icon_close" src="/icon/hamburger_close_icon.png"></label>
+    <label for="hamburger_menu" class="close"><img class="about_hamburger_icon_close" src="/icon_svg/hamburger_close_icon.svg"></label>
 
     <nav class="hamburger_menu">
         <h2 class="map_menu_title">メニュー</h2>
@@ -35,97 +35,46 @@
     <%# タイトル %>
     <h1 class="about_title">ペットマップとは</h1>
     <div class="about_menu">
-        <p class="about_menu_contens">ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ<br><br>
-        ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ
+        <h2 class="about_menu_title_web">あなたにもペットにも楽しい便利な暮らしを<br>お届けしたい</h2>
+        <h2 class="about_menu_title_res">あなたにもペットにも楽しい便利な暮らしをお届けしたい</h2>
+        <p class="about_menu_contents">大切なペットと一緒に入ることができるお店を探すための地図アプリです<br>
+        この地図アプリひとつで楽しい便利な暮らしを実現しよう
         </p>
-        <img src="/about_background001_2.png">
+        <img src="/about_background001_4.png">
         <%# できることの説明 %>
         <div class="about_contents">
             <h2 class="about_contents_title">ペットマップでできること</h2>
-            <div class="about_contents_web_nav">
-                <section class="about_contents_nav_long_item">
-                    <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                    <div class="nav_item_title">
-                        <div class="item_padding">
-                            <%= link_to( "ペットマップあああああああああああ", "/maps") %>
-                        </div>
-                    </div>
-                </section>
-                <div class="about_contents_nav_short_items">
-                    <section class="about_contents_nav_short_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_short_item">
-                    </section>
-                    <section class="about_contents_nav_short_item">
-                    </section>
-                    <section class="about_contents_nav_short_item">
-                    </section>
+            <div class="about_contents_mov">
+                <div class="mov_option">
+                    <img src="/cando_1_3.gif" />
+                </div>
+                <div class="mov_contents">
+                    <h2 class="mov_contents_title">ペットと楽しく便利な生活を過ごそう</h2>
+                    <p class="mov_contents_contents">ペットと一緒に入れるお店をペットマップのボタンを押すことで探すことができます</p>
+                </div>
+                <div class="mov_contents">
+                    <h2 class="mov_contents_title">マイルートを設定しよう</h2>
+                    <p class="mov_contents_contents">ペットと一緒に入れる飲食店、ホテル、動物病院やトリミング店などあなたがよく使う場所を好きな順番でカスタムできます</p>
+                </div>
+                <div class="mov_option">
+                    <%# <video src="/cando_2_2.webm" autoplay loop muted playsinline></video> %>
+                    <img src="/cando_2_2.gif" />
+                </div>
+                <div class="mov_option">
+                    <%# <video src="/cando_3_1.webm" autoplay loop muted playsinline></video> %>
+                    <img src="/cando_3_1.gif" />
+                </div>
+                <div class="mov_contents">
+                    <h2 class="mov_contents_title">このサービスに対して意見、提案をしよう</h2>
+                    <p class="mov_contents_contents">より良いサービスを目指すためにあなたの意見を必要としています</p>
                 </div>
             </div>
-
-            <div class="about_contents_smart_nav">
-                <div class="about_contents_nav_items">
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps/cando_1" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットと楽しく便利な生活を過ごそう", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "マイルートを設定しよう", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="about_contents_nav_item">
-                        <%= link_to image_tag("/cando_2.png"), "/maps" %>
-                        <div class="nav_item_title">
-                            <div class="item_padding">
-                                <%= link_to( "ペットマップあああああああああああ", "/maps") %>
-                            </div>
-                        </div>
-                    </section>
-                </div>
+            
+            <div class="about_contents_smart_nav_1">
+                <%= react_component('CanDoList') %>
             </div>
         </div>
     </div>
-    
-    <script>
-        const init = function(){
-            let items = document.querySelectorAll('section');
-            for (let i = 0; i < items.length; i++){
-                items[i].style.background = randomColor({luminosity: 'light'});
-            }
-            cssScrollSnapPolyfill()
-        }
-        init();
-    </script>
     <% if @current_user %>
     <% else %>
         <div class="recommend_login">

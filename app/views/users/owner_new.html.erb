@@ -1,0 +1,141 @@
+<div class="main_users">
+    <%# ハンバーガーメニュー %>
+    <div class="hamburger">
+        <input id="hamburger_menu" type="checkbox" />
+        <label for="hamburger_menu" class="open"><img class="hamburger_icon" src="/icon_svg/hamburger_icon2.svg"></label>
+
+        <%# ハンバーガーメニューの中身 %>
+        <aside>
+            <div class="hamburger_nav">
+                <label for="hamburger_menu" class="close"><img class="hamburger_icon" src="/icon_svg/hamburger_close_icon.svg"></label>
+
+                <nav class="hamburger_menu">
+                    <h2 class="menu_title">メニュー</h2>
+                    <% if @current_user %>
+                        <li>
+                            <%= link_to( "マイページ", "/users/#{@current_user.id}") %>
+                        </li>
+                        <li>
+                            <%= link_to("ログアウト", "/logout", {method: :post})%>
+                        </li>
+                        <li>
+                            <%= link_to( "ペットマップ", "/maps") %>
+                        </li>
+                        <li>
+                            <%= link_to( "ペットマップとは", "/maps/about") %>
+                        </li>
+                        <li>
+                            <%= link_to( "提案,意見する", "/posts/index") %>
+                        </li>
+                    <% else %>
+                        <li>
+                            <%= link_to( "ログイン", "/login") %>
+                        </li>
+                        <li>
+                            <%= link_to( "ペットマップ", "/maps") %>
+                        </li>
+                        <li>
+                            <%= link_to( "ペットマップとは", "/maps/about") %>
+                        </li>
+                    <% end %>
+                </nav>
+            </div>
+        </aside>
+    </div>
+
+    <%# サイドメニュー %>
+    <div class="maps_menu">
+        <h2 class="menu_title">メニュー</h2>
+        <% if @current_user %>
+            <li>
+                <%= link_to image_tag("/icon_svg/mypage.svg"), "/users/#{@current_user.id}" %>
+                <%= link_to( "マイページ", "/users/#{@current_user.id}") %>
+            </li>
+            <li>
+                <img src="/icon_svg/mypage.svg" class="logout_img">
+                <%= link_to("ログアウト", "/logout", {method: :post})%>
+            </li>
+            <li>
+                <%= link_to image_tag("/icon_svg/map.svg"), "/maps" %>
+                <%= link_to( "ペットマップ", "/maps") %>
+            </li>
+            <li>
+                <%= link_to image_tag("/icon_svg/map.svg"), "/maps/about" %>
+                <%= link_to( "ペットマップとは", "/maps/about") %>
+            </li>
+            <li>
+                <%= link_to image_tag("/icon_svg/suggestion.svg"), "/posts/index" %>
+                <%= link_to( "提案,意見する", "/posts/index") %>
+            </li>
+        <% else %>
+                    <li>
+                <%= link_to image_tag("/icon_svg/mypage.svg"), "/login" %>
+                <%= link_to( "ログイン", "/login") %>
+            </li>
+            <li>
+                <%= link_to image_tag("/icon_svg/map.svg"), "/maps/about" %>
+                <%= link_to( "ペットマップとは", "/maps/about") %>
+            </li>
+        <% end %>
+    </div>
+
+    <%# アカウント作成 %>
+    <div class="main_users_new">
+        <div class="users_top">
+            <h1 class="users_title">アカウント作成</h1>
+            <p class="users_contents">あなた専用のアカウントを作成しよう<p>
+        </div>
+        <div class="users_new_item">
+            <div class="container">
+                <div class="form_users_form">
+                    <div class="form_body">
+                        <%# エラーメッセージ %>
+                        <% @user.errors.full_messages.each do |message| %>
+                        <div class="form_error">
+                            <%= message %>
+                        </div>
+                        <% end %>
+                        
+                        <%= form_tag("/users/owner_create") do %>
+                            <p class="input_title">店舗名、施設名</p>                                                           <%# 店舗名、施設名の設定 %>
+                            <input name="name" value="<%= @user.name %>" class="textbox"
+                            placeholder="店舗名、施設名を記述してください">
+                            <p class="input_title">メールアドレス</p>                                                           <%# メールアドレスの設定 %>
+                            <input name="email" value="<%= @user.email %>" class="textbox"
+                            placeholder="例: example.com">
+                            <p class="input_title">住所</p>                                                                   <%# 住所の設定 %>
+                            <input name="address" value="<%= @user.address %>" class="textbox"
+                            placeholder="例: 東京都新宿区西新宿２丁目８−１">
+                            <p class="input_title">電話番号</p>                                                                <%# 電話番号の設定 %>
+                            <input name="phone_number" value="<%= @user.phone_number %>" class="textbox"
+                            placeholder="例: 12312341234">
+                            <p class="input_title">開業時間</p>                                                                <%# 開業時間の設定 %>
+                            <input name="open_time" value="<%= @user.open_time %>" class="textbox"
+                            placeholder="例: 12:00">
+                            <p class="input_title">終業時間</p>                                                                <%# 終業時間の設定 %>
+                            <input name="close_time" value="<%= @user.close_time %>" class="textbox"
+                            placeholder="例: 21:00">
+                            <p class="input_title">店舗、施設のURL</p>                                                          <%# お店、施設のの設定 %>
+                            <input name="url" value="<%= @user.url %>" class="textbox"
+                            placeholder="例: https//~.com">
+                            <p class="input_title">店舗、施設の特徴、アピールポイント</p>                                           <%# お店、施設の特徴、アピールポイントの設定 %>
+                            <input name="feature" value="<%= @user.feature %>" class="textbox_feature"
+                            placeholder="例：定休日: 水曜日など">
+                            <div class="myroute_item">
+                                <p class="input_title">店舗、施設のタイプ</p>
+                                <select name="marker_type">
+                                    <% @route.each do |route| %>
+                                        <option value=<%= route.function_name %>><%= route.route_name %></option>                <%# タイプの設定 %>
+                                    <% end %>
+                                </select>
+                            </div>
+                            <p class="input_title">パスワード</p>                                                               <%# パスワードの設定 %>
+                            <input type="password" name="password" value="<%= @user.password %>" class="textbox">
+                            <input type="submit" value="作成" class="textbutton">
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
